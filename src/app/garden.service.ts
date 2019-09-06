@@ -1,17 +1,37 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { flatMap } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
 })
 export class GardenService {
+  private apiToken = null;
   constructor(private http: HttpClient) {}
 
+  isExpired() {
+    return new Date(this.apiToken.expiration * 1000) < new Date();
+  }
+
   getPlantData(searchTerm: string): Observable<any> {
-    return this.http.get(
-      `https://trefle.io/api/plants?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6WzQ4LDQ2LDQ4LDQ2LDQ4LDQ2LDQ4XSwiaXNzdWVyX2lkIjoxMjE2LCJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjQyMDAiLCJhdWQiOiJKb2tlbiIsImV4cCI6MTU2NzgwMDAwNSwiaWF0IjoxNTY3NzkyODA1LCJpc3MiOiJKb2tlbiIsImp0aSI6IjJuMHVtZnZzY2FyMnRxdTcwa2M3YXBpMSIsIm5iZiI6MTU2Nzc5MjgwNX0.p3ocRxMRgy0adQ_na5UBpT_-XuGHtSv1sD73LTyisP4&q=${searchTerm}`
-    );
+    //check if we have active token, or if it's expired.
+    if (!this.apiToken || this.isExpired()) {
+      //get token
+      return this.http.get("http://localhost:5000/auth").pipe(
+        flatMap(res => {
+          this.apiToken = res;
+          //make request to plants api
+          return this.http.get(
+            `https://trefle.io/api/plants?token=${this.apiToken.token}&q=${searchTerm}`
+          );
+        })
+      );
+    } else {
+      return this.http.get(
+        `https://trefle.io/api/plants?token=${this.apiToken.token}&q=${searchTerm}`
+      );
+    }
   }
 }
 // trefle.io/api/plants?q=rosemary
