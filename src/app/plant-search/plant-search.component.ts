@@ -14,10 +14,9 @@ export class PlantSearchComponent implements OnInit {
   ngOnInit() {}
 
   getPlants(searchTerm: string): any {
-    // console.log(form.value.name);
     this.gardenService.getPlantData(searchTerm).subscribe(response => {
       this.plantData = response;
-      // console.log(response);
+      console.log(response);
     });
   }
 }
