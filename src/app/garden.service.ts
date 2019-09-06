@@ -8,9 +8,9 @@ import { Observable } from "rxjs";
 export class GardenService {
   constructor(private http: HttpClient) {}
 
-  getPlantData(form: any): Observable<any> {
+  getPlantData(searchTerm: string): Observable<any> {
     return this.http.get(
-      `https://trefle.io/api/plants?token=bWFMNzRmSXV4M21qMDJwL2JXUHRvdz09&q=${form.value}`
+      `https://trefle.io/api/plants?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6WzQ4LDQ2LDQ4LDQ2LDQ4LDQ2LDQ4XSwiaXNzdWVyX2lkIjoxMjE2LCJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjQyMDAiLCJhdWQiOiJKb2tlbiIsImV4cCI6MTU2NzgwMDAwNSwiaWF0IjoxNTY3NzkyODA1LCJpc3MiOiJKb2tlbiIsImp0aSI6IjJuMHVtZnZzY2FyMnRxdTcwa2M3YXBpMSIsIm5iZiI6MTU2Nzc5MjgwNX0.p3ocRxMRgy0adQ_na5UBpT_-XuGHtSv1sD73LTyisP4&q=${searchTerm}`
     );
   }
 }

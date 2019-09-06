@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { GardenService } from "../garden.service";
-import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-plant-search",
@@ -14,11 +13,11 @@ export class PlantSearchComponent implements OnInit {
 
   ngOnInit() {}
 
-  getPlants(form: NgForm): any {
-    console.log(form.value.name);
-    this.gardenService.getPlantData(form).subscribe(response => {
-      // this.plantData = response;
-      console.log(response);
+  getPlants(searchTerm: string): any {
+    // console.log(form.value.name);
+    this.gardenService.getPlantData(searchTerm).subscribe(response => {
+      this.plantData = response;
+      // console.log(response);
     });
   }
 }
