@@ -1,0 +1,53 @@
+.sidenav-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+h1 {
+  font-size: 18px;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.nav-links {
+  font-size: 15px;
+}
+
+.first {
+  margin-right: 15px;
+}
+
+.sidenav-toolbar {
+  display: flex;
+  background: lightgreen;
+}
+
+.example-container {
+  flex: 1;
+}
+
+.nav {
+  display: flex;
+}
+
+@media only screen and (min-width: 468px) {
+  .nav-links {
+    font-size: 1em;
+    margin-right: 15px;
+  }
+
+  .first {
+    margin-right: 35px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    flex: 1;
+    margin-left: 20px;
+  }
+}
