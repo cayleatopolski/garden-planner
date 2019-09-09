@@ -41,5 +41,7 @@ export class PlantSearchComponent implements OnInit {
         this.plantData = response;
         // console.log(this.plantData);
       });
+
+    this.gardenService.getId(this.plantData);
   }
 }

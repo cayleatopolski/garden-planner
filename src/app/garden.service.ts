@@ -11,6 +11,7 @@ export class GardenService {
   private apiToken = null;
   images: any;
   plantData: any[];
+  id: number;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -51,9 +52,14 @@ export class GardenService {
     // }
   }
 
-  getId(plants: any) {}
+  getId(plants: any) {
+    for (let i = 0; i < plants.length; i++) {
+      this.id = plants[i].id;
+      return this.id;
+    }
+  }
 
-  getPlantImg(id: number): Observable<any> {
+  getPlantImg(): Observable<any> {
     // return this.http.get(
     //   `https://trefle.io/api/plants/${id}?token=${this.apiToken.token}`
     // );
@@ -62,7 +68,7 @@ export class GardenService {
         flatMap(res => {
           this.apiToken = res;
           return this.http.get(
-            `https://trefle.io/api/plants/${id}?token=${this.apiToken.token}`
+            `https://trefle.io/api/plants/${this.id}?token=${this.apiToken.token}`
           );
         })
       );
