@@ -34,4 +34,3 @@ export class GardenService {
     }
   }
 }
-// trefle.io/api/plants?q=rosemary
