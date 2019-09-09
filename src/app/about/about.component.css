@@ -1,7 +1,6 @@
     img {
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-size: cover;
         width: 100%;
     }
     
@@ -10,7 +9,7 @@
         text-align: center;
         justify-content: center;
         flex-direction: column;
-        font-family: "Darker Grotesque", sans-serif;
+        font-family: 'Karla', sans-serif;
         color: gray;
     }
 
