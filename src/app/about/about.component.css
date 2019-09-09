@@ -1,0 +1,8 @@
+    body {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: "Darker Grotesque", sans-serif;
+        color: gray;
+    }

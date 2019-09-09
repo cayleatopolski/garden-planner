@@ -2,13 +2,15 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { flatMap } from "rxjs/operators";
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: "root"
 })
 export class GardenService {
   private apiToken = null;
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient, private router: Router) {}
 
   isExpired() {
     return new Date(this.apiToken.expiration * 1000) < new Date();
@@ -33,5 +35,12 @@ export class GardenService {
       );
     }
   }
+
+  goToGarden(): void {
+    this.router.navigate(["garden"]);
+  }
+
+  goToAbout(): void {
+    this.router.navigate(["about"]);
+  }
 }
-// trefle.io/api/plants?q=rosemary

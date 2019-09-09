@@ -1,0 +1,27 @@
+div {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Darker Grotesque", sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: linear-gradient(rgba(5, 5, 5, 0.1), rgba(5, 5, 5, 0.1)), url("/../assets/background\ image\ .jpg");
+   
+}
+
+p {
+    color: black;
+    font-size: 40px;
+}
+
+button {
+    background-color: black;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 10px 24px;
+    margin: 40px;
+    text-align: center;
+    color: white;
+  }
