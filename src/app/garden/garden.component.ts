@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { GardenService } from '../garden.service';
+
 @Component({
   selector: 'app-garden',
   templateUrl: './garden.component.html',
