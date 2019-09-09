@@ -9,6 +9,9 @@ import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { GardenComponent } from "./garden/garden.component";
 import { RouterModule, Routes } from "@angular/router";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DragDropModule } from "@angular/cdk/drag-drop";
+// import { MatCardModule } from "@angular/material/";
 
 const appRoutes: Routes = [
   { path: "home", component: HomeComponent },
@@ -30,7 +33,9 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    DragDropModule
   ],
   providers: [GardenService],
   bootstrap: [AppComponent]

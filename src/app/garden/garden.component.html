@@ -1,1 +1,22 @@
-<p>garden works!</p>
+<div
+  id="bob"
+  cdkDropList
+  (cdkDropListDropped)="drop($event)"
+  cdkDropListOrientation="horizontal"
+>
+  <div *ngFor="let plant of plants; index as i" class="plant" cdkDrag>
+    {{ plant }}
+  </div>
+  <!-- <div cdkDrag>Plant 1</div>
+  <div cdkDrag>Plant 2</div>
+  <div cdkDrag>Plant 3</div>
+  <div cdkDrag>Plant 4</div>
+  <div cdkDrag>Plant 5</div>
+  <div cdkDrag>Plant 6</div>
+  <div cdkDrag>Plant 7</div>
+  <div cdkDrag>Plant 8</div>
+  <div cdkDrag>Plant 9</div>
+  <div cdkDrag>Plant 10</div>
+  <div cdkDrag>Plant 11</div>
+  <div cdkDrag>Plant 12</div> -->
+</div>
