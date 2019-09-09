@@ -8,6 +8,9 @@ import { PlantSearchComponent } from "./plant-search/plant-search.component";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { GardenComponent } from "./garden/garden.component";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MaterialModule } from "../Material-Module";
 import { RouterModule, Routes } from "@angular/router";
 
 const appRoutes: Routes = [
@@ -30,6 +33,9 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    MatSidenavModule,
+    BrowserAnimationsModule,
+    MaterialModule
     RouterModule.forRoot(appRoutes)
   ],
   providers: [GardenService],
