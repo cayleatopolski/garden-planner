@@ -1,3 +1,13 @@
 <div><app-plant-search></app-plant-search></div>
 <button [routerLink]="['/home']">Return To Home</button>
 
+<button (click)="gardenGridService.addItem()">Add</button>
+
+<!-- <i class="fas fa-plus-square" (click)="gardenGridService.addItem()"></i> -->
+
+<gridster [options]="options">
+  <gridster-item [item]="item" *ngFor="let item of gardenGrid">
+    <div class="plant">A freaking plant</div>
+    <button (click)="gardenGridService.deleteItem()">Delete</button>
+  </gridster-item>
+</gridster>
