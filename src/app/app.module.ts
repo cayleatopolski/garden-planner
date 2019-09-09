@@ -11,6 +11,15 @@ import { GardenComponent } from "./garden/garden.component";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "../Material-Module";
+import { RouterModule, Routes } from "@angular/router";
+
+const appRoutes: Routes = [
+  { path: "home", component: HomeComponent },
+  { path: "search", component: PlantSearchComponent },
+  { path: "garden", component: GardenComponent },
+  { path: "about", component: AboutComponent },
+  { path: "", redirectTo: "/home", pathMatch: "full" }
+];
 
 @NgModule({
   declarations: [
@@ -27,6 +36,7 @@ import { MaterialModule } from "../Material-Module";
     MatSidenavModule,
     BrowserAnimationsModule,
     MaterialModule
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [GardenService],
   bootstrap: [AppComponent]
