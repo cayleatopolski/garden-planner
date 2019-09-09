@@ -35,7 +35,7 @@ export class GardenService {
       );
     }
   }
-
+  //routes
   goToGarden(): void {
     this.router.navigate(["garden"]);
   }
