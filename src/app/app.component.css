@@ -1,0 +1,12 @@
+    h1 {
+
+    }
+    
+    button {
+        background-color: grey;
+        border-radius: 20px;
+        padding: 10px 24px;
+        margin: 20px;
+        text-align: center;
+        color: white;
+      }
