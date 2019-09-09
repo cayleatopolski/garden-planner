@@ -3,3 +3,10 @@ gridster {
   height: calc(100vh - 115px);
   flex-direction: column;
 }
+.box {
+  border: 5px solid grey;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  text-align: center;
+}

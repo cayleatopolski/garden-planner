@@ -35,6 +35,13 @@ export class GardenService {
       );
     }
   }
+
+  // getPlantInfo(searchTerm: string): Observable<any> {
+  //   return this.http.get(
+  //     `https://trefle.io/api/plants?token=${this.apiToken.token}&q=${searchTerm}`
+  //   );
+  // }
+
   //routes
   goToGarden(): void {
     this.router.navigate(["garden"]);

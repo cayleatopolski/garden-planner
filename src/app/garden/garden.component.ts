@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { GridsterConfig, GridsterItem } from "angular-gridster2";
 import { GardenGridService } from "../services/garden-grid.service";
 
+import { GardenService } from '../garden.service';
+
 @Component({
   selector: "app-garden",
   templateUrl: "./garden.component.html",

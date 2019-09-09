@@ -1,2 +1,39 @@
-<app-plant-search></app-plant-search>
-<router-outlet></router-outlet>
+<div class="sidenav-container">
+  <mat-toolbar class="sidenav-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <i class="material-icons">
+        dehaze
+      </i>
+    </button>
+    <h1 class="example-app-name">App Name</h1>
+    <div class="nav">
+      <a class="nav-links first" routerLink="/home">Home</a>
+      <a class="nav-links" routerLink="/garden">Garden</a>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #snav mode="side" opened>
+      <mat-nav-list>
+        <a mat-list-item>Item 1</a>
+        <a mat-list-item>Item 2</a>
+        <a mat-list-item>Item 3</a>
+      </mat-nav-list>
+      <!-- <app-plant-search class="search"></app-plant-search> -->
+    </mat-sidenav>
+
+    <mat-sidenav-content
+      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed hic tempore
+      ea optio cum eum aspernatur blanditiis odit ullam. A iusto sed unde
+      ratione ab id nemo, assumenda sapiente corporis. Lorem ipsum dolor, sit
+      amet consectetur adipisicing elit. Provident porro temporibus id nostrum,
+      eligendi explicabo sequi inventore voluptatum sint voluptatem! Nobis,
+      necessitatibus error non sequi distinctio neque aspernatur rerum impedit?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+      accusantium explicabo necessitatibus quod est expedita voluptatibus enim
+      alias impedit nulla aliquid asperiores tempora, quos officia harum soluta
+      ratione cum porro.</mat-sidenav-content
+    >
+  </mat-sidenav-container>
+</div>
+<router-outlet> </router-outlet>
