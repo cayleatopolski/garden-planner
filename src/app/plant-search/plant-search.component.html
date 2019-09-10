@@ -6,9 +6,9 @@
 </div>
 <div>
   <ol>
-    <li *ngFor="let plant of plantData; index as i">
+    <li *ngFor="let plant of images; index as i">
       {{ plant.common_name }}
+      <img src="{{ plant.images[i].url }}" alt="" />
     </li>
   </ol>
 </div>
-<!-- [getPlants(searchForm.value.searchTerm), getImg()] -->

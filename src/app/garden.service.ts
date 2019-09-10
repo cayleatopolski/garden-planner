@@ -52,26 +52,27 @@ export class GardenService {
     // }
   }
 
-  getId(plants: any) {
-    for (let i = 0; i < plants.length; i++) {
-      this.id = plants[i].id;
-      return this.id;
-    }
-  }
+  // getId(plants: any): any {
+  //   for (let i = 0; i < plants.length; i++) {
+  //     this.id = plants[i].id;
+  //     console.log(
+  //       this.id,
+  //       this.http.get(
+  //         `https://trefle.io/api/plants/${this.id}?token=${this.apiToken.token}`
+  //       )
+  //     );
+  //   }
+  // }
 
-  getPlantImg(): Observable<any> {
-    // return this.http.get(
-    //   `https://trefle.io/api/plants/${id}?token=${this.apiToken.token}`
-    // );
-    if (!this.apiToken || this.isExpired()) {
-      return this.http.get("http://localhost:5000/auth").pipe(
-        flatMap(res => {
-          this.apiToken = res;
-          return this.http.get(
-            `https://trefle.io/api/plants/${this.id}?token=${this.apiToken.token}`
-          );
-        })
-      );
-    }
+  getId(plants: any): Observable<any> {
+    // for (let i = 0; i < plants.length; i++) {
+    //   this.id = plants[i].id;
+    return (
+      this.id,
+      this.http.get(
+        `https://trefle.io/api/plants/136196?token=${this.apiToken.token}`
+      )
+    );
+    // }
   }
 }
