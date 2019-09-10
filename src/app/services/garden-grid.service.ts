@@ -12,7 +12,8 @@ export class GardenGridService {
     },
     resizable: {
       enabled: true
-    }
+    },
+    mobileBreakpoint: 0
   };
   public gardenGrid: GridsterItem[] = [];
 
