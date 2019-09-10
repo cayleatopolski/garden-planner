@@ -14,20 +14,20 @@ div {
 
 h3 {
     color: white;
-    font-size: 17px;
+    font-size: 50px;
 }
 
 p {
     font-family: 'Karla', sans-serif;
     color: white;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 button {
     background-color: transparent;
     font-size: 20px;
-    border-radius: 2px;
-    padding: 5px 5px;
+    border-radius: 50px;
+    padding: 35px 50px ;
     margin: 40px;
     text-align: center;
     color: white;
@@ -47,7 +47,7 @@ button {
         height:bottom; 
      }
   
-     .fa {
+     /* .fa {
         display: flex;
         flex-direction: row;
         padding: 7px;
@@ -80,7 +80,7 @@ button {
       .fa-youtube {
         background: #bb0000;
         color: white;
-      }
+      } */
 
      @media only screen and (min-width: 480px) {
         .btn {
