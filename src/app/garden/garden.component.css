@@ -2,13 +2,12 @@ gridster {
   display: flex;
   height: calc(100vh - 115px);
   flex-direction: column;
+  background: #654321;
 }
-.box {
-  border: 5px solid grey;
-  display: flex;
-  flex-direction: column;
-  padding: 10px 15px;
-  text-align: center;
+
+#gridSection {
+  height: 100vh;
+  position: relative;
 }
 
 button {
