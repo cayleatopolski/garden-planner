@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GardenService } from './garden.service';
+import { GardenGridService } from './garden-grid.service';
 
-describe('GardenService', () => {
+describe('GardenGridService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: GardenService = TestBed.get(GardenService);
+    const service: GardenGridService = TestBed.get(GardenGridService);
     expect(service).toBeTruthy();
   });
 });

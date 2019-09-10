@@ -1,3 +1,27 @@
-<h1>hi</h1>
+<div class="sidenav-container">
+  <mat-toolbar class="sidenav-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <i class="material-icons">
+        dehaze
+      </i>
+    </button>
+    <h1 class="example-app-name">GROW PRO</h1>
+    <div class="nav">
+      <a class="nav-links first" routerLink="/home">Home</a>
+      <a class="nav-links" routerLink="/garden">Garden</a>
+    </div>
+  </mat-toolbar>
 
-<router-outlet></router-outlet>
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #snav mode="side" opened>
+      <mat-nav-list>
+        <a mat-list-item>Item 1</a>
+        <a mat-list-item>Item 2</a>
+        <a mat-list-item>Item 3</a>
+      </mat-nav-list>
+      <!-- <app-plant-search class="search"></app-plant-search> -->
+    </mat-sidenav>
+
+    <mat-sidenav-content><router-outlet> </router-outlet></mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

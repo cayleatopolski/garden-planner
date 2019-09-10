@@ -1,13 +1,18 @@
-.plant {
-  border: 1px solid black;
-  height: 100%;
-  width: 100%;
+gridster {
+  display: flex;
+  height: calc(100vh - 115px);
+  flex-direction: column;
+  background: #654321;
 }
 
-#bob {
-  border: 1px solid black;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  height: 600px;
+#gridSection {
+  height: 100vh;
+  position: relative;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: green;
+  font-size: 15px;
 }

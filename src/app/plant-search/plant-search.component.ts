@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { GardenService } from "../garden.service";
+import { GardenService } from "../services/garden.service";
 import { NgForm } from "@angular/forms";
 
 @Component({

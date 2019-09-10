@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
+import { GridsterConfig, GridsterItem } from "angular-gridster2";
+import { GardenGridService } from "../services/garden-grid.service";
 
 @Component({
   selector: "app-garden",
@@ -7,27 +8,29 @@ import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
   styleUrls: ["./garden.component.css"]
 })
 export class GardenComponent implements OnInit {
-  plants: any[] = [
-    "plant 1",
-    "plant 2",
-    "plant 3",
-    "plant 4",
-    "plant 5",
-    "plant 6",
-    "plant 7",
-    "plant 8",
-    "plant 9",
-    "plant 10",
-    "plant 11",
-    "plant 12"
-  ];
+  get options(): GridsterConfig {
+    return this.gardenGridService.options;
+  }
+  get layout(): GridsterItem[] {
+    return this.gardenGridService.gardenGrid;
+  }
 
-  constructor() {}
+  //get rid of this
+  gardenGrid: GridsterItem[] = [];
 
-  ngOnInit() {}
+  constructor(private gardenGridService: GardenGridService) {}
 
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.plants, event.previousIndex, event.currentIndex);
-    console.log(event);
+  ngOnInit() {
+    this.gardenGrid = [
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 }
+    ];
+  }
+  removePlant(index: number): void {
+    this.gardenGrid.splice(index, 1);
   }
 }
