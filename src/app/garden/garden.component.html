@@ -3,11 +3,12 @@
 
 <section id="gridSection">
   <button (click)="gardenGridService.addItem()">Add</button>
-  <!-- <i class="fas fa-plus-square" (click)="gardenGridService.addItem()"></i> -->
   <gridster [options]="options">
-    <gridster-item [item]="item" *ngFor="let item of gardenGrid">
+    <gridster-item [item]="item" *ngFor="let item of gardenGrid; index as i">
       <div class="plant">A freaking plant</div>
-      <button (click)="gardenGridService.deleteItem()">Delete</button>
+      <button (click)="removePlant(i)"><i class="far fa-trash-alt"></i></button>
     </gridster-item>
   </gridster>
 </section>
+
+

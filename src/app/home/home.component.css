@@ -47,7 +47,7 @@ button {
         height:bottom; 
      }
   
-     .fa {
+     /* .fa {
         display: flex;
         flex-direction: row;
         padding: 7px;
@@ -80,7 +80,7 @@ button {
       .fa-youtube {
         background: #bb0000;
         color: white;
-      }
+      } */
 
      @media only screen and (min-width: 480px) {
         .btn {

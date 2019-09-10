@@ -30,4 +30,8 @@ export class GardenComponent implements OnInit {
       { cols: 1, rows: 1, y: 1, x: 1 }
     ];
   }
+  removePlant(index: number): void {
+    this.gardenGrid.splice(index, 1);
+  }
+
 }

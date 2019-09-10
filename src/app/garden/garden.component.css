@@ -10,3 +10,10 @@ gridster {
   padding: 10px 15px;
   text-align: center;
 }
+
+button {
+    background-color: transparent;
+    border: none;
+    color: green;
+    font-size: 15px;
+  }
