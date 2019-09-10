@@ -10,6 +10,7 @@ import { NgForm } from "@angular/forms";
 export class PlantSearchComponent implements OnInit {
   plantData: any[];
   images: any[] = [];
+  show: boolean = false;
 
   constructor(private gardenService: GardenService) {}
 
@@ -41,14 +42,6 @@ export class PlantSearchComponent implements OnInit {
         // console.log(this.plantData);
       });
 
-    this.gardenService.getId(this.plantData).subscribe(response => {
-      JSON.stringify(this.images.push(response));
-      console.log(this.images);
-    });
-
-    // this.gardenService.getPlantImg().subscribe(response => {
-    //   // this.images = response;
-    //   console.log(response);
-    // });
+    this.images = this.gardenService.getId(this.plantData);
   }
 }

@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 })
 export class GardenService {
   private apiToken = null;
-  images: any;
+  images: any[] = [];
   plantData: any[];
   id: number;
 
@@ -64,15 +64,18 @@ export class GardenService {
   //   }
   // }
 
-  getId(plants: any): Observable<any> {
-    // for (let i = 0; i < plants.length; i++) {
-    //   this.id = plants[i].id;
-    return (
-      this.id,
-      this.http.get(
-        `https://trefle.io/api/plants/136196?token=${this.apiToken.token}`
-      )
-    );
-    // }
+  getId(plants: any): any {
+    for (let i = 0; i < plants.length; i++) {
+      this.id = plants[i].id;
+
+      this.http
+        .get(
+          `https://trefle.io/api/plants/${this.id}?token=${this.apiToken.token}`
+        )
+        .subscribe(response => {
+          JSON.stringify(this.images.push(response));
+        });
+    }
+    return this.images;
   }
 }

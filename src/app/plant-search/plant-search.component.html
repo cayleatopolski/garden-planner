@@ -8,7 +8,10 @@
   <ol>
     <li *ngFor="let plant of images; index as i">
       {{ plant.common_name }}
-      <img src="{{ plant.images[i].url }}" alt="" />
+      <!-- <div>
+        <img src="{{ plant.images[i].url }}" alt="" />
+        <img src="../../assets/carrot.png" alt="" />
+      </div> -->
     </li>
   </ol>
 </div>
