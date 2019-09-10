@@ -1,8 +1,7 @@
 <div><app-plant-search></app-plant-search></div>
-<!-- <button [routerLink]="['/home']">Return To Home</button> -->
 
 <section id="gridSection">
-  <button (click)="gardenGridService.addItem()">Add</button>
+  <button (click)="onAddHandler()">Add</button>
   <gridster [options]="options">
     <gridster-item [item]="item" *ngFor="let item of gardenGrid; index as i">
       <div class="plant">A freaking plant</div>
@@ -10,5 +9,3 @@
     </gridster-item>
   </gridster>
 </section>
-
-
