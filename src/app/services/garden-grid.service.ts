@@ -11,7 +11,7 @@ export class GardenGridService {
       enabled: true
     },
     resizable: {
-      enabled: true
+      enabled: false
     },
     mobileBreakpoint: 0
   };
