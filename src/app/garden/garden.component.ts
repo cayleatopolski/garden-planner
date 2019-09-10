@@ -33,5 +33,4 @@ export class GardenComponent implements OnInit {
   removePlant(index: number): void {
     this.gardenGrid.splice(index, 1);
   }
-
 }

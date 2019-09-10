@@ -6,16 +6,24 @@
   bottom: 0;
   left: 0;
   right: 0;
+  color: white;
 }
 
 h1 {
-  font-size: 18px;
+  font-size: 15px;
   flex: 1;
   margin-left: 10px;
+  color: white;
+  
 }
 
 .nav-links {
   font-size: 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
 }
 
 .first {
@@ -29,6 +37,7 @@ h1 {
 
 .example-container {
   flex: 1;
+  color: grey;
 }
 
 .nav {
