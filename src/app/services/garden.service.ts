@@ -9,6 +9,9 @@ import { Router } from "@angular/router";
 })
 export class GardenService {
   private apiToken = null;
+  images: any[] = [];
+  plantData: any[];
+  id: number;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -17,15 +20,16 @@ export class GardenService {
   }
 
   getPlantData(searchTerm: string): Observable<any> {
-    //check if we have active token, or if it's expired.
+    // check if we have active token, or if it's expired.
     if (!this.apiToken || this.isExpired()) {
       //get token
       return this.http.get("http://localhost:5000/auth").pipe(
         flatMap(res => {
           this.apiToken = res;
+
           //make request to plants api
           return this.http.get(
-            `https://trefle.io/api/plants?token=${this.apiToken.token}&q=${searchTerm}`
+            `https://trefle.io/api/plants/?token=${this.apiToken.token}&q=${searchTerm}`
           );
         })
       );
@@ -34,6 +38,18 @@ export class GardenService {
         `https://trefle.io/api/plants?token=${this.apiToken.token}&q=${searchTerm}`
       );
     }
+    // if (!this.apiToken || this.isExpired()) {
+    //   //get token
+    //   return this.http.get("http://localhost:5000/auth").pipe(
+    //     flatMap(res => {
+    //       this.apiToken = res;
+    //       //make request to plants api
+    //       return this.http.get(
+    //         `https://trefle.io/api/plants/${searchTerm}?token=${this.apiToken.token}`
+    //       );
+    //     })
+    //   );
+    // }
   }
 
   // getPlantInfo(searchTerm: string): Observable<any> {
@@ -47,7 +63,18 @@ export class GardenService {
     this.router.navigate(["garden"]);
   }
 
-  goToAbout(): void {
-    this.router.navigate(["about"]);
+  getId(plants: any): any {
+    for (let i = 0; i < plants.length; i++) {
+      this.id = plants[i].id;
+
+      this.http
+        .get(
+          `https://trefle.io/api/plants/${this.id}?token=${this.apiToken.token}`
+        )
+        .subscribe(response => {
+          JSON.stringify(this.images.push(response));
+        });
+    }
+    return this.images;
   }
 }
