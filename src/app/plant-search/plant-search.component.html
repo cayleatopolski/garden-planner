@@ -6,11 +6,20 @@
 </div>
 <div>
   <ol>
-    <li *ngFor="let plant of images; index as i">
-      {{ plant.common_name }}
+    <li *ngFor="let plant of plantData; index as i">
+      <p>
+        {{ plant.common_name }}
+      </p>
+      <p *ngIf="plant.common_name === null">
+        {{ plant.scientific_name }}
+      </p>
       <!-- <div>
         <img src="{{ plant.images[i].url }}" alt="" />
-        <img src="../../assets/carrot.png" alt="" />
+        <img
+          *ngIf="plant.images[i].length === 0"
+          src="../../assets/carrot.png"
+          alt=""
+        />
       </div> -->
     </li>
   </ol>
