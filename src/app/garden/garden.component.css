@@ -40,7 +40,7 @@ button:hover {
   bottom: 0;
   right: 0;
 }
-  
+
 @media only screen and (max-width: 767px) and (orientation: portrait) {
   .container {
     transform: rotate(-90deg);
@@ -73,5 +73,4 @@ button:hover {
   .rotate {
     visibility: hidden;
   }
-
 }
