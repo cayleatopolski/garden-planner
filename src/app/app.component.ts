@@ -7,4 +7,9 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "final-project";
+  closed: boolean = true;
+
+  toggleClass() {
+    this.closed = !this.closed;
+  }
 }

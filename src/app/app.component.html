@@ -3,9 +3,11 @@
 <div class="sidenav-container">
   <mat-toolbar class="sidenav-toolbar">
     <button mat-icon-button (click)="snav.toggle()">
-      <i class="material-icons">
-        dehaze
-      </i>
+      <i
+        (click)="toggleClass()"
+        class="fas fa-2x"
+        [ngClass]="closed ? 'fa-bars' : 'fa-times'"
+      ></i>
     </button>
     <h1 class="example-app-name">GROW PRO</h1>
     <div class="nav">

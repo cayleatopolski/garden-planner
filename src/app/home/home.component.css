@@ -1,62 +1,72 @@
 div {
-    display: flex;
-    height: 100vh;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    /* font-family: 'Josefin Slab', serif; */
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* background-image: linear-gradient(rgba(1, 1, 1, 0.01), rgba(1, 1, 1, 0.1)), url("/../assets/grass\ tile.jpeg"); */
-    /* background-image: url("/../assets/seedling\.jpeg"); */
+  display: flex;
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  /* font-family: 'Josefin Slab', serif; */
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-image: linear-gradient(rgba(1, 1, 1, 0.01), rgba(1, 1, 1, 0.1)), url("/../assets/grass\ tile.jpeg"); */
+  /* background-image: url("/../assets/seedling\.jpeg"); */
 }
 
 p {
-    font-family: 'Karla', sans-serif;
-    color: grey;
-    font-size: 20px;
+  font-family: "Karla", sans-serif;
+  color: grey;
+  font-size: 20px;
 }
 
 button {
-    background-color: transparent;
-    font-size: 20px;
-    border-radius: 50px;
-    padding: 10px ;
-    margin: 40px;
-    text-align: center;
-    color: grey;
+  background-color: transparent;
+  font-size: 20px;
+  border-radius: 50px;
+  padding: 10px;
+  margin: 40px;
+  text-align: center;
+  color: grey;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+span {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer {
+  font-size: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: bottom;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
   }
-
-  span {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
+  50% {
+    transform: scale(0.85);
   }
+  to {
+    transform: scale(1);
+  }
+}
 
-  .footer {   
-      font-size: 10px;
-        position:absolute;
-        bottom:0;
-        width:100%;
-        height:bottom; 
-     }
-
-     @keyframes pulse {
-      from { transform: scale(1); }
-      50% { transform: scale(0.85); }
-      to { transform: scale(1); }
-    }
-    
-    .name-pulse {
-      animation-name: pulse;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-      color: grey;
-      font-size: 50px;
-      margin-top: 0;
-      margin-bottom: 0;
-    } 
+.name-pulse {
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  color: grey;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 0;
+} 
   
   .grow { 
   transition: all .2s ease-in-out; 
@@ -77,3 +87,4 @@ button {
         }
       } 
     
+

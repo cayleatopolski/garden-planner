@@ -44,5 +44,3 @@ export class GardenGridService {
   //   this.gardenGrid.splice(this.gardenGrid.indexOf(item), 1);
   // }
 }
-
-// console.log(this.gardenGrid);
