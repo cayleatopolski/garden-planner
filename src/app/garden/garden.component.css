@@ -30,3 +30,38 @@ button:hover {
   bottom: 0;
   right: 0;
 }
+  
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .container {
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    visibility: hidden;
+    height: 50vh;
+  }
+
+  .rotate {
+    visibility: visible;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1300px) and (orientation: portrait) {
+  .rotate {
+    visibility: hidden;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  .container {
+    visibility: visible;
+  }
+  .rotate {
+    visibility: hidden;
+  }
+
+}

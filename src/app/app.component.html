@@ -1,14 +1,20 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div class="sidenav-container">
   <mat-toolbar class="sidenav-toolbar">
     <button mat-icon-button (click)="snav.toggle()">
-      <i class="material-icons">
-        dehaze
-      </i>
+      <i
+        (click)="toggleClass()"
+        class="fas fa-2x"
+        [ngClass]="closed ? 'fa-bars' : 'fa-times'"
+      ></i>
     </button>
     <h1 class="example-app-name">GROW PRO</h1>
     <div class="nav">
       <a class="nav-links first" routerLink="/home">Home</a>
       <a class="nav-links" routerLink="/garden">Garden</a>
+      <!-- <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a> -->
     </div>
   </mat-toolbar>
 
