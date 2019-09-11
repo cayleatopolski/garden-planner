@@ -7,8 +7,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname + "/dist"));
 app.use("/", router);
+app.use(express.static(__dirname + "/dist"));
 
 app.listen(port, () => {
   console.log(`Server is listening on port: ${port}`);
