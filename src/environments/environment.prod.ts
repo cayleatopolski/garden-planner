@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  authApiUrl: "https://grow-pro.herokuapp.com/auth"
 };

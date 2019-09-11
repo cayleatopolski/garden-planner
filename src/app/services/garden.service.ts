@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, of, combineLatest } from "rxjs";
 import { flatMap } from "rxjs/operators";
 import { Router } from "@angular/router";
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: "root"
@@ -22,7 +23,7 @@ export class GardenService {
     // check if we have active token, or if it's expired.
     if (!this.apiToken || this.isExpired()) {
       //get token
-      return this.http.get("http://localhost:5000/auth").pipe(
+      return this.http.get(`${environment.authApiUrl}/auth`).pipe(
         flatMap(res => {
           this.apiToken = res;
           return of(this.apiToken.token);
