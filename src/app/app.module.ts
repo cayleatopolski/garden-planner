@@ -16,11 +16,12 @@ import { GridsterModule } from "angular-gridster2";
 import { GardenGridService } from "./services/garden-grid.service";
 
 const appRoutes: Routes = [
+  { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
   { path: "search", component: PlantSearchComponent },
   { path: "garden", component: GardenComponent },
   { path: "about", component: AboutComponent },
-  { path: "", redirectTo: "/home", pathMatch: "full" }
+  { path: "**", redirectTo: "/home"}
 ];
 
 @NgModule({
