@@ -8,7 +8,7 @@
 
 <div>
   <ol>
-    <li *ngFor="let plant of plantData; index as i">
+    <li *ngFor="let plant of plantData">
       <p>
         {{ plant.common_name }}
       </p>
@@ -16,9 +16,13 @@
         {{ plant.scientific_name }}
       </p>
       <div>
-        <img *ngIf="plant.images[0]" src="{{ plant.images[0].url }}" alt="" />
-        <img *ngIf="!plant.images[0]" src="../../assets/carrot.png" alt="" />
+        <img src="{{ images.hits[2].webformatURL }}" alt="" />
       </div>
     </li>
   </ol>
 </div>
+
+<!-- <div>
+        <img *ngIf="plant.images[0]" src="{{ plant.images[0].url }}" alt="" />
+        <img *ngIf="!plant.images[0]" src="../../assets/carrot.png" alt="" />
+      </div> -->

@@ -13,7 +13,12 @@ export class GardenGridService {
     resizable: {
       enabled: false
     },
-    mobileBreakpoint: 0
+    mobileBreakpoint: 0,
+    minRows: 2,
+    maxRows: 5,
+    minCols: 2,
+    maxCols: 5,
+    margin: 5
   };
   public gardenGrid: GridsterItem[] = [];
 
@@ -32,7 +37,7 @@ export class GardenGridService {
   }
 
   addItem(): void {
-    console.log("working");
+    // console.log("working");
     this.gardenGrid.push({
       cols: 1,
       id: UUID.UUID(),

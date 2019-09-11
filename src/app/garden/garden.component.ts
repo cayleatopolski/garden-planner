@@ -24,7 +24,7 @@ export class GardenComponent implements OnInit {
     this.gardenGrid = this.gardenGridService.gardenGrid;
   }
 
-  onAddHandler(event) {
+  onAddHandler() {
     this.gardenGridService.addItem();
   }
 

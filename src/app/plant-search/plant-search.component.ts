@@ -10,7 +10,7 @@ import { flatMap } from "rxjs/operators";
 })
 export class PlantSearchComponent implements OnInit {
   plantData: any[] = [];
-  show: boolean = false;
+  images: any[] = [];
 
   constructor(private gardenService: GardenService) {}
 
@@ -26,7 +26,12 @@ export class PlantSearchComponent implements OnInit {
       )
       .subscribe((plantData: any) => {
         this.plantData = plantData;
-        console.log(this.plantData);
+        // console.log(this.plantData);
       });
+
+    this.gardenService.getImages(form.value.searchTerm).subscribe(response => {
+      this.images = response;
+      console.log(this.images);
+    });
   }
 }

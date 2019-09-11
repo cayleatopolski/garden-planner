@@ -39,15 +39,10 @@ export class GardenService {
     return this.getAuth().pipe(
       flatMap(token => {
         return this.http.get(
-          `https://trefle.io/api/plants/?token=${token}&q=${searchTerm}`
+          `https://trefle.io/api/plants/?token=${token}&q=${searchTerm}&page_size=6`
         );
       })
     );
-  }
-
-  //routes
-  goToGarden(): void {
-    this.router.navigate(["garden"]);
   }
 
   getId(plants: any): Observable<any> {
@@ -64,5 +59,16 @@ export class GardenService {
       );
     }
     return combineLatest(detailObs);
+  }
+
+  getImages(searchTerm: any): Observable<any> {
+    return this.http.get(
+      `https://pixabay.com/api/?key=13595691-f1b1086d0aa3fd34e61442edf&q=${searchTerm}&image_type=photo`
+    );
+  }
+
+  //routes
+  goToGarden(): void {
+    this.router.navigate(["garden"]);
   }
 }
