@@ -17,6 +17,20 @@ button {
   font-size: 15px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+#searchAdd {
+  size: 20px;
+}
+
+#removePlant {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+  
 @media only screen and (max-width: 767px) and (orientation: portrait) {
   .container {
     transform: rotate(-90deg);
@@ -49,4 +63,5 @@ button {
   .rotate {
     visibility: hidden;
   }
+
 }

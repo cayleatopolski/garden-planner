@@ -24,6 +24,9 @@ export class GardenGridService {
       { cols: 1, rows: 1, y: 1, x: 1 },
       { cols: 1, rows: 1, y: 1, x: 1 },
       { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
       { cols: 1, rows: 1, y: 1, x: 1 }
     ];
   }
