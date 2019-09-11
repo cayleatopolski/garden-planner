@@ -14,7 +14,6 @@ h1 {
   flex: 1;
   margin-left: 10px;
   color: white;
-  
 }
 
 .nav-links {
@@ -61,9 +60,7 @@ h1 {
   }
 }
 
-
-
-   /* .fa {
+/* .fa {
         display: flex;
         flex-direction: row;
         padding: 7px;
@@ -82,9 +79,9 @@ h1 {
       .fa-facebook {
         background: #3B5998;
         color: white;
-      } */
-      
-      /* .fa-twitter {
+      } 
+
+      .fa-twitter {
         background: #55ACEE;
         color: white;
       } */
