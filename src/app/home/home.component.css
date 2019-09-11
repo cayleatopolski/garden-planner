@@ -28,6 +28,10 @@ button {
   color: grey;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 span {
   display: flex;
   justify-content: center;
