@@ -16,24 +16,6 @@ export class PlantSearchComponent implements OnInit {
 
   ngOnInit() {}
 
-  // getPlants(searchTerm: string): any {
-  //   this.gardenService.getPlantData(searchTerm).subscribe(response => {
-  //     this.plantData = response;
-  //     // console.log(this.plantData);
-  //   });
-  // }
-
-  // getImg() {
-  //   for (let i = 0; i < this.plantData.length; i++) {
-  //     this.id = this.plantData[i].id;
-  //     return this.id;
-  //   }
-
-  //   this.gardenService.getPlantImg(this.id).subscribe(response => {
-  //     console.log(response);
-  //   });
-  // }
-
   submitForm(form: NgForm) {
     this.gardenService
       .getPlantData(form.value.searchTerm)
@@ -44,6 +26,7 @@ export class PlantSearchComponent implements OnInit {
       )
       .subscribe((plantData: any) => {
         this.plantData = plantData;
+        console.log(this.plantData);
       });
   }
 }

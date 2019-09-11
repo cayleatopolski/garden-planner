@@ -13,14 +13,10 @@
       <p *ngIf="plant.common_name === null">
         {{ plant.scientific_name }}
       </p>
-      <!-- <div>
-        <img src="{{ plant.images[i].url }}" alt="" />
-        <img
-          *ngIf="plant.images[i].length === 0"
-          src="../../assets/carrot.png"
-          alt=""
-        />
-      </div> -->
+      <div>
+        <img *ngIf="plant.images[0]" src="{{ plant.images[0].url }}" alt="" />
+        <img *ngIf="!plant.images[0]" src="../../assets/carrot.png" alt="" />
+      </div>
     </li>
   </ol>
 </div>
