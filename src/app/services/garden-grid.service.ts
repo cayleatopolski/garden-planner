@@ -32,7 +32,7 @@ export class GardenGridService {
   }
 
   addItem(): void {
-    console.log("working");
+    // console.log("working");
     this.gardenGrid.push({
       cols: 1,
       id: UUID.UUID(),
