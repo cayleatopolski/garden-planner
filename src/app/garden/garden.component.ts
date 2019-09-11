@@ -21,15 +21,13 @@ export class GardenComponent implements OnInit {
   constructor(private gardenGridService: GardenGridService) {}
 
   ngOnInit() {
-    this.gardenGrid = [
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 }
-    ];
+    this.gardenGrid = this.gardenGridService.gardenGrid;
   }
+
+  onAddHandler(event) {
+    this.gardenGridService.addItem();
+  }
+
   removePlant(index: number): void {
     this.gardenGrid.splice(index, 1);
   }

@@ -11,13 +11,22 @@ export class GardenGridService {
       enabled: true
     },
     resizable: {
-      enabled: true
+      enabled: false
     },
     mobileBreakpoint: 0
   };
   public gardenGrid: GridsterItem[] = [];
 
-  constructor() {}
+  constructor() {
+    this.gardenGrid = [
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 }
+    ];
+  }
 
   addItem(): void {
     console.log("working");
@@ -25,14 +34,15 @@ export class GardenGridService {
       cols: 1,
       id: UUID.UUID(),
       rows: 1,
-      x: 1,
-      y: 1
+      x: 0,
+      y: 0
     });
   }
-  deleteItem(id: string): void {
-    const item = this.gardenGrid.find(d => d.id === id);
-    this.gardenGrid.splice(this.gardenGrid.indexOf(item), 1);
-  }
+
+  // deleteItem(id: string): void {
+  //   const item = this.gardenGrid.find(d => d.id === id);
+  //   this.gardenGrid.splice(this.gardenGrid.indexOf(item), 1);
+  // }
 }
 
 // console.log(this.gardenGrid);

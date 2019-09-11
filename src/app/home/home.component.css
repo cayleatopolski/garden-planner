@@ -1,25 +1,20 @@
 div {
     display: flex;
     height: 100vh;
-    width: 100vw;
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    font-family: 'Archivo Narrow', sans-serif;
+    /* font-family: 'Josefin Slab', serif; */
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: linear-gradient(rgba(1, 1, 1, 0.01), rgba(1, 1, 1, 0.1)), url("/../assets/grass\ tile.jpeg");
+    /* background-image: linear-gradient(rgba(1, 1, 1, 0.01), rgba(1, 1, 1, 0.1)), url("/../assets/grass\ tile.jpeg"); */
     /* background-image: url("/../assets/seedling\.jpeg"); */
-}
-
-h3 {
-    color: white;
-    font-size: 50px;
 }
 
 p {
     font-family: 'Karla', sans-serif;
-    color: white;
+    color: grey;
     font-size: 20px;
 }
 
@@ -27,10 +22,10 @@ button {
     background-color: transparent;
     font-size: 20px;
     border-radius: 50px;
-    padding: 35px 50px ;
+    padding: 10px ;
     margin: 40px;
     text-align: center;
-    color: white;
+    color: grey;
   }
 
   span {
@@ -46,8 +41,24 @@ button {
         width:100%;
         height:bottom; 
      }
+
+     @keyframes pulse {
+      from { transform: scale(1); }
+      50% { transform: scale(0.85); }
+      to { transform: scale(1); }
+    }
+    
+    .name-pulse {
+      animation-name: pulse;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      color: grey;
+      font-size: 50px;
+      margin-top: 0;
+      margin-bottom: 0;
+    } 
   
-     /* .fa {
+      /* .fa {
         display: flex;
         flex-direction: row;
         padding: 7px;
@@ -72,20 +83,13 @@ button {
         color: white;
       }
 
-      .fa-pinterest {
-        background: #cb2027;
-        color: white;
-      }
-
-      .fa-youtube {
-        background: #bb0000;
-        color: white;
-      } */
-
      @media only screen and (min-width: 480px) {
-        .btn {
-            flex-direction: row;
-            padding: 5px 10px;
-            margin: 10px;
+        button {
+            padding: 35px 50px;
         }
-     }
+        
+        .btn {
+          flex-direction: row;
+        }
+      } */
+    
