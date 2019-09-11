@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, of, combineLatest } from "rxjs";
 import { flatMap } from "rxjs/operators";
 import { Router } from "@angular/router";
 
@@ -11,7 +11,6 @@ export class GardenService {
   private apiToken = null;
   images: any[] = [];
   plantData: any[];
-  id: number;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -19,37 +18,30 @@ export class GardenService {
     return new Date(this.apiToken.expiration * 1000) < new Date();
   }
 
-  getPlantData(searchTerm: string): Observable<any> {
+  getAuth(): Observable<string> {
     // check if we have active token, or if it's expired.
     if (!this.apiToken || this.isExpired()) {
       //get token
       return this.http.get("http://localhost:5000/auth").pipe(
         flatMap(res => {
           this.apiToken = res;
-
-          //make request to plants api
-          return this.http.get(
-            `https://trefle.io/api/plants/?token=${this.apiToken.token}&q=${searchTerm}`
-          );
+          return of(this.apiToken.token);
         })
       );
     } else {
-      return this.http.get(
-        `https://trefle.io/api/plants?token=${this.apiToken.token}&q=${searchTerm}`
-      );
+      return of(this.apiToken.token);
     }
-    // if (!this.apiToken || this.isExpired()) {
-    //   //get token
-    //   return this.http.get("http://localhost:5000/auth").pipe(
-    //     flatMap(res => {
-    //       this.apiToken = res;
-    //       //make request to plants api
-    //       return this.http.get(
-    //         `https://trefle.io/api/plants/${searchTerm}?token=${this.apiToken.token}`
-    //       );
-    //     })
-    //   );
-    // }
+  }
+
+  getPlantData(searchTerm: string): Observable<any> {
+    // check if we have active token, or if it's expired.
+    return this.getAuth().pipe(
+      flatMap(token => {
+        return this.http.get(
+          `https://trefle.io/api/plants/?token=${token}&q=${searchTerm}`
+        );
+      })
+    );
   }
 
   //routes
@@ -57,18 +49,19 @@ export class GardenService {
     this.router.navigate(["garden"]);
   }
 
-  getId(plants: any): any {
+  getId(plants: any): Observable<any> {
+    const detailObs = [];
     for (let i = 0; i < plants.length; i++) {
-      this.id = plants[i].id;
-
-      this.http
-        .get(
-          `https://trefle.io/api/plants/${this.id}?token=${this.apiToken.token}`
+      detailObs.push(
+        this.getAuth().pipe(
+          flatMap(token => {
+            return this.http.get(
+              `https://trefle.io/api/plants/${plants[i].id}?token=${token}`
+            );
+          })
         )
-        .subscribe(response => {
-          JSON.stringify(this.images.push(response));
-        });
+      );
     }
-    return this.images;
+    return combineLatest(detailObs);
   }
 }
