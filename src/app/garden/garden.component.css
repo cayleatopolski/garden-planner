@@ -16,3 +16,17 @@ button {
   color: green;
   font-size: 15px;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+#searchAdd {
+  size: 20px;
+}
+
+#removePlant {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
