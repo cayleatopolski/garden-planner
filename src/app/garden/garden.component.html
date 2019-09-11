@@ -1,11 +1,18 @@
-<div><app-plant-search></app-plant-search></div>
+<div class="rotate">
+  <p>Please Rotate Your Device.</p>
+</div>
+<div class="container">
+  <div><app-plant-search></app-plant-search></div>
 
-<section id="gridSection">
-  <button (click)="onAddHandler()">Add</button>
-  <gridster [options]="options">
-    <gridster-item [item]="item" *ngFor="let item of gardenGrid; index as i">
-      <div class="plant">A freaking plant</div>
-      <button (click)="removePlant(i)"><i class="far fa-trash-alt"></i></button>
-    </gridster-item>
-  </gridster>
-</section>
+  <section id="gridSection">
+    <button (click)="onAddHandler()">Add</button>
+    <gridster [options]="options">
+      <gridster-item [item]="item" *ngFor="let item of gardenGrid; index as i">
+        <div class="plant">A freaking plant</div>
+        <button (click)="removePlant(i)">
+          <i class="far fa-trash-alt"></i>
+        </button>
+      </gridster-item>
+    </gridster>
+  </section>
+</div>
