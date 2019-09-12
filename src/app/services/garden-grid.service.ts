@@ -6,6 +6,8 @@ import { UUID } from "angular2-uuid";
   providedIn: "root"
 })
 export class GardenGridService {
+  favorites: any[] = [];
+
   public options: GridsterConfig = {
     draggable: {
       enabled: true
@@ -46,6 +48,10 @@ export class GardenGridService {
       y: 0
     });
   }
+
+  // addItemToGrid() {
+  //   this.gardenGrid.push()
+  // }
 
   // deleteItem(id: string): void {
   //   const item = this.gardenGrid.find(d => d.id === id);
