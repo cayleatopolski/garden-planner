@@ -42,3 +42,19 @@ input {
   border-radius: 5px;
   margin-right: 5px;
 }
+
+i,
+button {
+  cursor: pointer;
+}
+
+form {
+  position: relative;
+}
+
+#closeModal {
+  position: absolute;
+  right: 16px;
+  top: 0;
+  color: green;
+}

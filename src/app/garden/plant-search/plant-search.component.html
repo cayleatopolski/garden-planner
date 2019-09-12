@@ -1,9 +1,14 @@
 <!-- Modal -->
-<div *ngIf="showSearchModal" id="modal-container" class="hidden">
+<div *ngIf="showSearchModal" id="modal-container">
   <form #searchForm="ngForm" (ngSubmit)="submitForm(searchForm)">
     <p>Search for a plant :</p>
     <input type="text" name="searchTerm" ngModel />
     <button>Search</button>
+    <i
+      id="closeModal"
+      class="far fa-times-circle fa-2x"
+      (click)="toggleSearchModal()"
+    ></i>
   </form>
   <div id="searchResults">
     <ol>
@@ -16,21 +21,19 @@
         </p>
         <div>
           <img src="{{ images.hits[2].webformatURL }}" alt="" />
+          <button (click)="addToFavorites(plant)">
+            <i class="fas fa-heart"></i>
+          </button>
         </div>
       </li>
     </ol>
   </div>
-  <button (click)="toggleSearchModal()">
-    Close Modal
-  </button>
 </div>
 <!-- <div
   *ngIf="!showSearchModal"
   id="overlay"
   (click)="toggleSearchModal()"
-  class="hidden"
 ></div> -->
-<!-- Results -->
 
 <!-- <div>
   <img *ngIf="plant.images[0]" src="{{ plant.images[0].url }}" alt="" />

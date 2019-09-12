@@ -48,7 +48,11 @@ h1 {
   color: white;
   margin-top: 5px;
   margin-left: 20px;
-} 
+}
+
+i {
+  cursor: pointer;
+}
 
 @media only screen and (min-width: 468px) {
   .nav-links {
@@ -66,5 +70,3 @@ h1 {
     margin-left: 20px;
   }
 }
-
-     
