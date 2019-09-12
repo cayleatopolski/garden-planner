@@ -13,6 +13,7 @@ export class GardenService {
   images: any[] = [];
   plantData: any[];
   showSearchModal: boolean = false;
+  favorites: any[] = [];
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -71,5 +72,14 @@ export class GardenService {
   //routes
   goToGarden(): void {
     this.router.navigate(["garden"]);
+  }
+  moveToFavorites(love: object) {
+    this.favorites.push(love);
+    console.log(this.favorites);
+  }
+
+  // created the method that the component will use to show the favorites list "get"
+  getFavorites(): any[] {
+    return this.favorites;
   }
 }

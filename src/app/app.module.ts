@@ -14,6 +14,7 @@ import { MaterialModule } from "../Material-Module";
 import { RouterModule, Routes } from "@angular/router";
 import { GridsterModule } from "angular-gridster2";
 import { GardenGridService } from "./services/garden-grid.service";
+import { FavoritesComponent } from "./favorites/favorites.component";
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
   { path: "search", component: PlantSearchComponent },
   { path: "garden", component: GardenComponent },
   { path: "about", component: AboutComponent },
+  { path: "favorites", component: FavoritesComponent },
   { path: "**", redirectTo: "/home" }
 ];
 
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     PlantSearchComponent,
     HomeComponent,
     AboutComponent,
-    GardenComponent
+    GardenComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

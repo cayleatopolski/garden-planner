@@ -41,4 +41,8 @@ export class PlantSearchComponent implements OnInit {
     console.log("doing my best to toggle");
     this.showSearchModal = !this.showSearchModal;
   }
+
+  addToFavorites(favorite: object) {
+    this.gardenService.moveToFavorites(favorite);
+  }
 }
