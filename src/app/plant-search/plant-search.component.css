@@ -2,14 +2,14 @@ img {
   width: 25%;
 }
 
-.hidden {
+/* .hidden {
   display: none;
 }
 .show {
   display: block;
-}
+} */
 
-#modal-container {
+/* #modal-container {
   position: fixed;
   top: 300px;
   left: 50%;
@@ -19,7 +19,7 @@ img {
   text-align: center;
   box-shadow: 0px 0px 2px 1px black;
   z-index: 100;
-}
+} */
 
 #overlay {
   position: absolute;

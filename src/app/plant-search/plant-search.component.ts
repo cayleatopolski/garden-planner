@@ -34,4 +34,7 @@ export class PlantSearchComponent implements OnInit {
       console.log(this.images);
     });
   }
+  addToFavorites(favorite: object) {
+    this.gardenService.moveToFavorites(favorite);
+  }
 }
