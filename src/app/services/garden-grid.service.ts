@@ -25,17 +25,19 @@ export class GardenGridService {
   public gardenGrid: GridsterItem[] = [];
   showSearchModal: boolean = false;
 
+
+  public gardenGrid: GridsterItem[] = [];
   constructor() {
     this.gardenGrid = [
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 }
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 }
     ];
   }
 
@@ -50,6 +52,13 @@ export class GardenGridService {
     });
   }
 
+
+  //   deleteItem(id: string): void {
+  //     const item = this.gardenGrid.find(d => d.id === id);
+  //     console.log(this.gardenGrid.indexOf(item));
+  //     this.gardenGrid.splice(this.gardenGrid.indexOf(item), 1);
+  //   }
+  
   toggleSearchModal(): void {
     console.log("doing my best to toggle");
     this.showSearchModal = !this.showSearchModal;
