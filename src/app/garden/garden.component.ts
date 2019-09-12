@@ -15,7 +15,6 @@ export class GardenComponent implements OnInit {
     return this.gardenGridService.gardenGrid;
   }
 
-  //get rid of this
   gardenGrid: GridsterItem[] = [];
   showSearchModal: boolean = false;
 

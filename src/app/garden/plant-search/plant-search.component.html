@@ -20,16 +20,16 @@
       </li>
     </ol>
   </div>
-  <button *ngIf="showSearchModal" (click)="toggleSearchModal()">
+  <button (click)="toggleSearchModal()">
     Close Modal
   </button>
 </div>
-<div
-  *ngIf="showSearchModal"
+<!-- <div
+  *ngIf="!showSearchModal"
   id="overlay"
   (click)="toggleSearchModal()"
   class="hidden"
-></div>
+></div> -->
 <!-- Results -->
 
 <!-- <div>
