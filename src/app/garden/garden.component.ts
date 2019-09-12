@@ -28,6 +28,10 @@ export class GardenComponent implements OnInit {
     this.gardenGridService.addItem();
   }
 
+  // deleteItem(id: string) {
+  //   this.gardenGridService.deleteItem(id);
+  // }
+
   removePlant(index: number): void {
     this.gardenGrid.splice(index, 1);
   }

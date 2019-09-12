@@ -20,19 +20,19 @@ export class GardenGridService {
     maxCols: 5,
     margin: 5
   };
-  public gardenGrid: GridsterItem[] = [];
 
+  public gardenGrid: GridsterItem[] = [];
   constructor() {
     this.gardenGrid = [
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 },
-      { cols: 1, rows: 1, y: 1, x: 1 }
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
+      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 }
     ];
   }
 
@@ -47,8 +47,9 @@ export class GardenGridService {
     });
   }
 
-  // deleteItem(id: string): void {
-  //   const item = this.gardenGrid.find(d => d.id === id);
-  //   this.gardenGrid.splice(this.gardenGrid.indexOf(item), 1);
-  // }
+  //   deleteItem(id: string): void {
+  //     const item = this.gardenGrid.find(d => d.id === id);
+  //     console.log(this.gardenGrid.indexOf(item));
+  //     this.gardenGrid.splice(this.gardenGrid.indexOf(item), 1);
+  //   }
 }
