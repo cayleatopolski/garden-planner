@@ -1,28 +1,38 @@
-<div id="modal-container" class="hidden">
+<!-- Modal -->
+<div *ngIf="showSearchModal" id="modal-container" class="hidden">
   <form #searchForm="ngForm" (ngSubmit)="submitForm(searchForm)">
+    <p>Search for a plant :</p>
     <input type="text" name="searchTerm" ngModel />
     <button>Search</button>
   </form>
+  <div id="searchResults">
+    <ol>
+      <li *ngFor="let plant of plantData">
+        <p>
+          {{ plant.common_name }}
+        </p>
+        <p *ngIf="plant.common_name === null">
+          {{ plant.scientific_name }}
+        </p>
+        <div>
+          <img src="{{ images.hits[2].webformatURL }}" alt="" />
+        </div>
+      </li>
+    </ol>
+  </div>
+  <button *ngIf="showSearchModal" (click)="toggleSearchModal()">
+    Close Modal
+  </button>
 </div>
-<div id="overlay" (click)="removeModal()" class="hidden"></div>
-
-<div>
-  <ol>
-    <li *ngFor="let plant of plantData">
-      <p>
-        {{ plant.common_name }}
-      </p>
-      <p *ngIf="plant.common_name === null">
-        {{ plant.scientific_name }}
-      </p>
-      <div>
-        <img src="{{ images.hits[2].webformatURL }}" alt="" />
-      </div>
-    </li>
-  </ol>
-</div>
+<div
+  *ngIf="showSearchModal"
+  id="overlay"
+  (click)="toggleSearchModal()"
+  class="hidden"
+></div>
+<!-- Results -->
 
 <!-- <div>
-        <img *ngIf="plant.images[0]" src="{{ plant.images[0].url }}" alt="" />
-        <img *ngIf="!plant.images[0]" src="../../assets/carrot.png" alt="" />
-      </div> -->
+  <img *ngIf="plant.images[0]" src="{{ plant.images[0].url }}" alt="" />
+  <img *ngIf="!plant.images[0]" src="../../assets/carrot.png" alt="" />
+</div> -->

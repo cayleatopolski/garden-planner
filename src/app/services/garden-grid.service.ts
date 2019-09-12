@@ -21,6 +21,7 @@ export class GardenGridService {
     margin: 5
   };
   public gardenGrid: GridsterItem[] = [];
+  showSearchModal: boolean = false;
 
   constructor() {
     this.gardenGrid = [
@@ -45,6 +46,11 @@ export class GardenGridService {
       x: 0,
       y: 0
     });
+  }
+
+  toggleSearchModal(): void {
+    console.log("doing my best to toggle");
+    this.showSearchModal = !this.showSearchModal;
   }
 
   // deleteItem(id: string): void {
