@@ -4,7 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
 import { GardenService } from "./services/garden.service";
-import { PlantSearchComponent } from "./plant-search/plant-search.component";
+import { PlantSearchComponent } from "./garden/plant-search/plant-search.component";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { GardenComponent } from "./garden/garden.component";
@@ -21,7 +21,7 @@ const appRoutes: Routes = [
   { path: "search", component: PlantSearchComponent },
   { path: "garden", component: GardenComponent },
   { path: "about", component: AboutComponent },
-  { path: "**", redirectTo: "/home"}
+  { path: "**", redirectTo: "/home" }
 ];
 
 @NgModule({

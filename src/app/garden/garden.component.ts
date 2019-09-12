@@ -15,8 +15,8 @@ export class GardenComponent implements OnInit {
     return this.gardenGridService.gardenGrid;
   }
 
-  //get rid of this
   gardenGrid: GridsterItem[] = [];
+  showSearchModal: boolean = false;
 
   constructor(private gardenGridService: GardenGridService) {}
 
@@ -30,5 +30,10 @@ export class GardenComponent implements OnInit {
 
   removePlant(index: number): void {
     this.gardenGrid.splice(index, 1);
+  }
+
+  toggleSearchModal(): void {
+    console.log("doing my best to toggle");
+    this.showSearchModal = !this.showSearchModal;
   }
 }

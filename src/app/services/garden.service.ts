@@ -12,6 +12,7 @@ export class GardenService {
   private apiToken = null;
   images: any[] = [];
   plantData: any[];
+  showSearchModal: boolean = false;
 
   constructor(private http: HttpClient, private router: Router) {}
 
