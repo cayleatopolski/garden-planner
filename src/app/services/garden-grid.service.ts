@@ -6,6 +6,8 @@ import { UUID } from "angular2-uuid";
   providedIn: "root"
 })
 export class GardenGridService {
+  favorites: any[] = [];
+
   public options: GridsterConfig = {
     draggable: {
       enabled: true
@@ -20,6 +22,9 @@ export class GardenGridService {
     maxCols: 5,
     margin: 5
   };
+  public gardenGrid: GridsterItem[] = [];
+  showSearchModal: boolean = false;
+
 
   public gardenGrid: GridsterItem[] = [];
   constructor() {
@@ -47,9 +52,23 @@ export class GardenGridService {
     });
   }
 
+
   //   deleteItem(id: string): void {
   //     const item = this.gardenGrid.find(d => d.id === id);
   //     console.log(this.gardenGrid.indexOf(item));
   //     this.gardenGrid.splice(this.gardenGrid.indexOf(item), 1);
   //   }
+  
+  toggleSearchModal(): void {
+    console.log("doing my best to toggle");
+    this.showSearchModal = !this.showSearchModal;
+  }
+  // addItemToGrid() {
+  //   this.gardenGrid.push()
+  // }
+
+  // deleteItem(id: string): void {
+  //   const item = this.gardenGrid.find(d => d.id === id);
+  //   this.gardenGrid.splice(this.gardenGrid.indexOf(item), 1);
+  // }
 }

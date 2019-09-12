@@ -2,7 +2,7 @@
   <p>Please Rotate Your Device.</p>
 </div>
 <div class="container">
-  <!-- <div><app-plant-search></app-plant-search></div> -->
+  <div><app-plant-search *ngIf="showSearchModal"></app-plant-search></div>
 
   <section id="gridSection">
     <button id="addPlot" (click)="onAddHandler()">Add a plot</button>
@@ -23,3 +23,5 @@
     </gridster>
   </section>
 </div>
+
+<app-favorites></app-favorites>

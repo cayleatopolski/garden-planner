@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { GardenService } from "../services/garden.service";
+import { GardenService } from "../../services/garden.service";
 import { NgForm } from "@angular/forms";
 import { flatMap } from "rxjs/operators";
 
@@ -11,6 +11,7 @@ import { flatMap } from "rxjs/operators";
 export class PlantSearchComponent implements OnInit {
   plantData: any[] = [];
   images: any[] = [];
+  showSearchModal: boolean = true;
 
   constructor(private gardenService: GardenService) {}
 
@@ -33,5 +34,15 @@ export class PlantSearchComponent implements OnInit {
       this.images = response;
       console.log(this.images);
     });
+  }
+
+  //modal
+  toggleSearchModal(): void {
+    console.log("doing my best to toggle");
+    this.showSearchModal = !this.showSearchModal;
+  }
+
+  addToFavorites(favorite: object) {
+    this.gardenService.moveToFavorites(favorite);
   }
 }
