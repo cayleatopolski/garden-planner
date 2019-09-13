@@ -14,9 +14,12 @@
         <p *ngIf="plant.common_name === null">
           {{ plant.scientific_name }}
         </p>
-        <div>
+        <button (click)="addToFavorites(plant)">
+          <i class="fas fa-heart"></i>
+        </button>
+        <!-- <div>
           <img src="{{ images.hits[2].webformatURL }}" alt="" />
-        </div>
+        </div> -->
       </li>
     </ol>
   </div>
