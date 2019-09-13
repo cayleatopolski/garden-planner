@@ -1,8 +1,8 @@
 gridster {
   display: flex;
-  height: calc(100vh - 115px);
   flex-direction: column;
   background: #654321;
+  height: 90%;
 }
 
 #gridSection {
@@ -10,10 +10,6 @@ gridster {
   position: relative;
   width: 80%;
   margin: auto;
-}
-
-gridster {
-  height: 90%;
 }
 
 p {
