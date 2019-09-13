@@ -71,9 +71,4 @@ export class GardenGridService {
       y: 0
     });
   }
-
-  // deleteItem(id: string): void {
-  //   const item = this.gardenGrid.find(d => d.id === id);
-  //   this.gardenGrid.splice(this.gardenGrid.indexOf(item), 1);
-  // }
 }
