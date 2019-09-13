@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { GardenService } from "../../services/garden.service";
 import { NgForm } from "@angular/forms";
 import { flatMap } from "rxjs/operators";
@@ -9,6 +9,7 @@ import { flatMap } from "rxjs/operators";
   styleUrls: ["./plant-search.component.css"]
 })
 export class PlantSearchComponent implements OnInit {
+  @Output() addPlantToGridEvent = new EventEmitter<any>();
   plantData: any[] = [];
   images: any[] = [];
   showSearchModal: boolean = true;
@@ -16,6 +17,10 @@ export class PlantSearchComponent implements OnInit {
   constructor(private gardenService: GardenService) {}
 
   ngOnInit() {}
+
+  addPlantToGrid(plant: any) {
+    this.addPlantToGridEvent.emit(plant);
+  }
 
   submitForm(form: NgForm) {
     this.gardenService

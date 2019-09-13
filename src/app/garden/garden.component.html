@@ -2,7 +2,12 @@
   <p>Please Rotate Your Device.</p>
 </div>
 <div class="container">
-  <div><app-plant-search *ngIf="showSearchModal"></app-plant-search></div>
+  <div>
+    <app-plant-search
+      *ngIf="showSearchModal"
+      (addPlantToGridEvent)="addPlantToGrid($event)"
+    ></app-plant-search>
+  </div>
 
   <section id="gridSection">
     <button id="addPlot" (click)="onAddHandler()">Add a plot</button>
@@ -11,7 +16,7 @@
         <div class="plant"></div>
         <button
           id="searchAdd"
-          (click)="toggleSearchModal()"
+          (click)="[toggleSearchModal(), addClickedIndex(i)]"
           (touchstart)="toggleSearchModal()"
         >
           <i class="fas fa-search-plus fa-2x"></i>
