@@ -17,11 +17,22 @@ export class GardenComponent implements OnInit {
 
   gardenGrid: GridsterItem[] = [];
   showSearchModal: boolean = false;
+  clickedIndex: number = null;
 
   constructor(private gardenGridService: GardenGridService) {}
 
   ngOnInit() {
     this.gardenGrid = this.gardenGridService.gardenGrid;
+  }
+
+  addClickedIndex(index: number) {
+    this.clickedIndex = index;
+    console.log(this.clickedIndex);
+  }
+
+  addPlantToGrid(plant: any) {
+    this.gardenGrid[this.clickedIndex].plant = plant;
+    console.log(this.gardenGrid);
   }
 
   onAddHandler() {

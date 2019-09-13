@@ -14,6 +14,7 @@ export class GardenService {
   plantData: any[];
   showSearchModal: boolean = false;
   favorites: any[] = [];
+  clickedIndex: number = null;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -69,7 +70,6 @@ export class GardenService {
     );
   }
 
-  //routes
   goToGarden(): void {
     this.router.navigate(["garden"]);
   }

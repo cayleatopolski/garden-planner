@@ -19,7 +19,7 @@ export class FavoritesComponent implements OnInit {
     this.favorites = this.gardenService.getFavorites();
   }
 
-  add(plant: any) {
-    this.gardenGridService.addPlant(plant);
-  }
+  // add(plant: any) {
+  //   this.gardenGridService.addPlant(plant);
+  // }
 }

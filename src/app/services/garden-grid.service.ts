@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { GridsterConfig, GridsterItem } from "angular-gridster2";
-import { UUID } from "angular2-uuid";
 
 @Injectable({
   providedIn: "root"
@@ -24,19 +23,19 @@ export class GardenGridService {
     disableWarnings: true
   };
   public gardenGrid: GridsterItem[] = [];
-  showSearchModal: boolean = false;
+  // showSearchModal: boolean = false;
 
   constructor() {
     this.gardenGrid = [
-      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
-      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
-      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
-      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
-      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
-      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
-      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
-      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
-      { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 }
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 },
+      { cols: 1, rows: 1, y: 1, x: 1 }
     ];
   }
 
@@ -44,7 +43,6 @@ export class GardenGridService {
     // console.log("working");
     this.gardenGrid.push({
       cols: 1,
-      id: UUID.UUID(),
       rows: 1,
       x: 0,
       y: 0
@@ -57,18 +55,21 @@ export class GardenGridService {
   //     this.gardenGrid.splice(this.gardenGrid.indexOf(item), 1);
   //   }
 
-  toggleSearchModal(): void {
-    console.log("doing my best to toggle");
-    this.showSearchModal = !this.showSearchModal;
+  // toggleSearchModal(): void {
+  //   console.log("doing my best to toggle");
+  //   this.showSearchModal = !this.showSearchModal;
+  // }
+
+  addPlantToGrid(index: number, plant: any) {
+    this.gardenGrid[index].plant = plant;
   }
 
-  addPlant(plant: any) {
-    this.gardenGrid.push({
-      cols: 1,
-      id: UUID.UUID(),
-      rows: 1,
-      x: 0,
-      y: 0
-    });
-  }
+  // addPlant(plant: any) {
+  //   this.gardenGrid.push({
+  //     cols: 1,
+  //     rows: 1,
+  //     x: 0,
+  //     y: 0
+  //   });
+  // }
 }
