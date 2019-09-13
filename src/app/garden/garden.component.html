@@ -6,7 +6,11 @@
     <gridster [options]="options">
       <gridster-item [item]="item" *ngFor="let item of gardenGrid; index as i">
         <div class="plant"></div>
-        <button id="searchAdd">
+        <button
+          id="searchAdd"
+          (click)="toggleSearchModal()"
+          (touchstart)="toggleSearchModal()"
+        >
           <i class="fas fa-search-plus fa-2x"></i>
         </button>
         <button

@@ -20,7 +20,8 @@ export class GardenGridService {
     maxRows: 5,
     minCols: 2,
     maxCols: 5,
-    margin: 5
+    margin: 5,
+    disableWarnings: true
   };
   public gardenGrid: GridsterItem[] = [];
   showSearchModal: boolean = false;
@@ -60,12 +61,14 @@ export class GardenGridService {
     console.log("doing my best to toggle");
     this.showSearchModal = !this.showSearchModal;
   }
-  // addItemToGrid() {
-  //   this.gardenGrid.push()
-  // }
 
-  // deleteItem(id: string): void {
-  //   const item = this.gardenGrid.find(d => d.id === id);
-  //   this.gardenGrid.splice(this.gardenGrid.indexOf(item), 1);
-  // }
+  addPlant(plant: any) {
+    this.gardenGrid.push({
+      cols: 1,
+      id: UUID.UUID(),
+      rows: 1,
+      x: 0,
+      y: 0
+    });
+  }
 }
