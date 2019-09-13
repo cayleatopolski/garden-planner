@@ -26,7 +26,6 @@ export class GardenGridService {
   showSearchModal: boolean = false;
 
 
-  public gardenGrid: GridsterItem[] = [];
   constructor() {
     this.gardenGrid = [
       { cols: 1, id: UUID.UUID(), rows: 1, y: 1, x: 1 },
