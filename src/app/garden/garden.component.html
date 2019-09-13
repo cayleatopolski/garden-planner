@@ -12,7 +12,11 @@
         <button id="searchAdd" (click)="toggleSearchModal()">
           <i class="fas fa-search-plus fa-2x"></i>
         </button>
-        <button id="removePlant" (click)="removePlant(i)">
+        <button
+          id="removePlant"
+          (click)="removePlant(i)"
+          (touchstart)="removePlant(i)"
+        >
           <i class="far fa-trash-alt fa-lg"></i>
         </button>
       </gridster-item>
