@@ -10,9 +10,6 @@ import { environment } from "../../environments/environment";
 })
 export class GardenService {
   private apiToken = null;
-  images: any[] = [];
-  plantData: any[];
-  showSearchModal: boolean = false;
   favorites: any[] = [];
   clickedIndex: number = null;
 
@@ -23,9 +20,7 @@ export class GardenService {
   }
 
   getAuth(): Observable<string> {
-    // check if we have active token, or if it's expired.
     if (!this.apiToken || this.isExpired()) {
-      //get token
       return this.http.get(`${environment.authApiUrl}/auth`).pipe(
         flatMap(res => {
           this.apiToken = res;
@@ -38,7 +33,6 @@ export class GardenService {
   }
 
   getPlantData(searchTerm: string): Observable<any> {
-    // check if we have active token, or if it's expired.
     return this.getAuth().pipe(
       flatMap(token => {
         return this.http.get(
@@ -78,7 +72,6 @@ export class GardenService {
     console.log(this.favorites);
   }
 
-  // created the method that the component will use to show the favorites list "get"
   getFavorites(): any[] {
     return this.favorites;
   }

@@ -43,8 +43,7 @@ const appRoutes: Routes = [
     GridsterModule,
     MatSidenavModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    RouterModule.forRoot(appRoutes)
+    MaterialModule
   ],
   providers: [GardenService, GardenGridService],
   bootstrap: [AppComponent]

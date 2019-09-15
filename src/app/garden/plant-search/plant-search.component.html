@@ -19,15 +19,11 @@
         <p *ngIf="plant.common_name === null">
           {{ plant.scientific_name }}
         </p>
-          <img src="{{ images.hits[2].webformatURL }}" alt="" />
-          <button (click)="addToFavorites(plant)">
-            <i class="fas fa-heart"></i>
-          </button>
-          <button (click)="addPlantToGrid(plant)">Add to garden</button>
-        </div>
+        <img src="{{ images.hits[2].webformatURL }}" alt="" />
         <button (click)="addToFavorites(plant)">
           <i class="fas fa-heart"></i>
         </button>
+        <button (click)="addPlantToGrid(plant)">Add to garden</button>
       </li>
     </ol>
   </div>
