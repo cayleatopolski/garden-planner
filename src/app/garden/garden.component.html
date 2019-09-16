@@ -4,6 +4,7 @@
       <app-plant-search
         *ngIf="showSearchModal"
         (addPlantToGridEvent)="addPlantToGrid($event)"
+        (toggleSearchModalEvent)="toggleSearchModal()"
       ></app-plant-search>
     </div>
 
