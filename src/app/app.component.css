@@ -1,3 +1,8 @@
+body {
+  background: #328a26;
+  background: radial-gradient(#adbf41, #328a26);
+}
+
 .sidenav-container {
   display: flex;
   flex-direction: column;
@@ -31,12 +36,13 @@ h1 {
 
 .sidenav-toolbar {
   display: flex;
-  background: lightgreen;
+  background: transparent;
 }
-
+/* this below has something to do with space up top */
 .example-container {
   flex: 1;
   color: grey;
+  background: transparent;
 }
 
 .nav {
