@@ -4,7 +4,9 @@
       <app-plant-search
         *ngIf="showSearchModal"
         (addPlantToGridEvent)="addPlantToGrid($event)"
+        (addImageToGridEvent)="addImageToGrid($event)"
         (toggleSearchModalEvent)="toggleSearchModal()"
+
       ></app-plant-search>
     </div>
 
@@ -18,16 +20,28 @@
           *ngFor="let item of gardenGrid; index as i"
         >
           <button
+
+            *ngIf="!item.plant"
+
             id="searchAdd"
             (click)="[toggleSearchModal(), addClickedIndex(i)]"
             (touchstart)="toggleSearchModal()"
           >
-            <i class="fas fa-search-plus fa-2x"></i>
+
+            <i class="fas fa-search-plus fa-lg"></i>
+
           </button>
           <div class="plant">
             <p *ngIf="item.plant">
               {{ item.plant.common_name }}
             </p>
+
+            <img
+              class="plantImg"
+              *ngIf="item.image"
+              src="{{ item.image }}"
+              alt=""
+            />
             <!-- <p *ngIf="item.plant.common_name === null">
             {{ item.plant.scientific_name }}
           </p> -->
@@ -49,7 +63,7 @@
 <img src="../../assets/370.gif" alt="" />
 
 <div class="rotate">
-  <p>Please Rotate Your Device.</p>
+  <p id="rotate">Please Rotate Your Device.</p>
   <img src="../../assets/large_happy-flowers-0217.png" alt="" />
 </div>
 <app-favorites></app-favorites>

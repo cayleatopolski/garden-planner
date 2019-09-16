@@ -48,4 +48,8 @@ export class GardenGridService {
   addPlantToGrid(index: number, plant: any) {
     this.gardenGrid[index].plant = plant;
   }
+
+  addImageToGrid(index: number, image: any) {
+    this.gardenGrid[index].image = image;
+  }
 }
