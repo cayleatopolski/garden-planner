@@ -53,6 +53,7 @@ button:hover {
 
 #addPlot {
   margin-top: 15px;
+  color: lightgreen;
 }
 
 .container::-webkit-scrollbar {
