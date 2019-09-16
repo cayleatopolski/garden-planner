@@ -1,14 +1,13 @@
 div {
   display: flex;
-  height: 100vh;
+  height: 100%;
   text-align: center;
   justify-content: center;
   flex-direction: column;
   /* font-family: 'Josefin Slab', serif; */
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background-image: url("../assets/garden.png"); */
+  background: #328a26;
+  background: radial-gradient(#adbf41, #328a26);
 }
 
 p {
@@ -27,21 +26,19 @@ button {
   color: grey;
 }
 
-button:hover {
-  cursor: pointer;
-}
-
 span {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.footer {
+footer {
   font-size: 10px;
   position: absolute;
   bottom: 0;
   width: 100%;
+  text-align: center;
+  color: #fff;
 }
 
 @keyframes pulse {
@@ -56,7 +53,7 @@ span {
   }
 }
 
-.name-pulse {
+h1 {
   animation-name: pulse;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -72,6 +69,7 @@ span {
 
 .grow:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 480px) {

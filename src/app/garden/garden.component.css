@@ -37,6 +37,11 @@ button:hover {
   right: 0;
 }
 
+#garden {
+  background: #328a26;
+  background: radial-gradient(#adbf41, #328a26);
+}
+
 @media only screen and (max-width: 767px) and (orientation: portrait) {
   .container {
     transform: rotate(-90deg);
