@@ -16,10 +16,13 @@ div {
 }
 
 h1 {
+  margin-bottom: 50px;
   font-size: 20vw;
   font-weight: 400;
   font-family: "Decovar Regular24";
-  font-variation-settings: "INLN" 400, "SWRM" 1000;
+  font-variation-settings: "INLN" 1000, "TSHR" 0, "TRSB" 0, "SSTR" 0, "TWRM" 0,
+    "SINL" 0, "TOIL" 0, "TINL" 0, "WORM" 0, "wght" 400, "TFLR" 0, "TRND" 0,
+    "SWRM" 1000, "TSLB" 0, "TBIF" 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: url(./grass.jpg);
@@ -38,6 +41,16 @@ h1::before {
 h1::after {
   color: #421f00;
   font-variation-settings: "INLN" 0;
+}
+
+@keyframes grow {
+  0% {
+    font-variation-settings: "INLN" 400, "SWRM" 1000;
+  }
+
+  50% {
+    font-variation-settings: "INLN" 400, "SWRM" 0;
+  }
 }
 
 p {
@@ -69,6 +82,7 @@ footer {
   width: 100%;
   text-align: center;
   color: #fff;
+  height: 20px;
 }
 
 /* @keyframes pulse {
