@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div *ngIf="showSearchModal" id="modal-container">
+<div id="modal-container">
   <form #searchForm="ngForm" (ngSubmit)="submitForm(searchForm)">
     <p>Search for a plant :</p>
     <input type="text" name="searchTerm" ngModel />
@@ -28,4 +28,4 @@
     </ol>
   </div>
 </div>
-<div *ngIf="showSearchModal" id="overlay" (click)="toggleSearchModal()"></div>
+<div id="overlay" (click)="toggleSearchModal()"></div>

@@ -7,6 +7,7 @@ div {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background: #328a26;
   background: radial-gradient(#adbf41, #328a26);
+  margin: 0;
 }
 
 /* @font-face {
@@ -20,8 +21,7 @@ div {
 }
 
 h1 {
-  margin-bottom: 50px;
-  font-size: 20vw;
+  font-size: 15vw;
   font-weight: 400;
   font-family: "Decovar Regular24";
   font-variation-settings: "INLN" 400, "SWRM" 1000;
@@ -156,5 +156,11 @@ h1 {
 
   .btn {
     flex-direction: row;
+  }
+}
+
+@media only screen and (max-height: 420px) and (orientation: landscape) {
+  button {
+    padding: 20px;
   }
 }
