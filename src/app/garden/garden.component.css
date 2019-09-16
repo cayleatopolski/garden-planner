@@ -37,10 +37,10 @@ button:hover {
   right: 0;
 }
 
-
 #garden {
   background: #328a26;
   background: radial-gradient(#adbf41, #328a26);
+}
 
 #addPlot {
   margin-top: 15px;

@@ -1,12 +1,6 @@
 <section id="garden">
   <div class="rotate">
     <p>Please Rotate Your Device.</p>
-<div class="container">
-  <div>
-    <app-plant-search
-      *ngIf="showSearchModal"
-      (addPlantToGridEvent)="addPlantToGrid($event)"
-    ></app-plant-search>
   </div>
   <div class="container">
     <div>
@@ -16,26 +10,22 @@
       ></app-plant-search>
     </div>
 
-
-  <section id="gridSection">
-    <button id="addPlot" (click)="onAddHandler()">Add a plot</button>
-    <gridster [options]="options">
-      <gridster-item [item]="item" *ngFor="let item of gardenGrid; index as i">
-        <div class="plant">
-          <p *ngIf="item.plant">
-            {{ item.plant.common_name }}
-          </p>
-          <!-- <p *ngIf="item.plant.common_name === null">
+    <section id="gridSection">
+      <button id="addPlot" (click)="onAddHandler()">Add a plot</button>
+      <gridster [options]="options">
+        <gridster-item
+          [item]="item"
+          *ngFor="let item of gardenGrid; index as i"
+        >
+          <div class="plant">
+            <p *ngIf="item.plant">
+              {{ item.plant.common_name }}
+            </p>
+            <!-- <p *ngIf="item.plant.common_name === null">
             {{ item.plant.scientific_name }}
           </p> -->
-        </div>
-        <button
-          id="searchAdd"
-          (click)="[toggleSearchModal(), addClickedIndex(i)]"
-          (touchstart)="toggleSearchModal()"
+          </div>
 
-        >
-          <div class="plant"></div>
           <button
             id="searchAdd"
             (click)="[toggleSearchModal(), addClickedIndex(i)]"
