@@ -119,28 +119,6 @@ footer {
   height: 20px;
 }
 
-/* @keyframes pulse {
-  from {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.85);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-h1 {
-  animation-name: pulse;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  color: grey;
-  font-size: 50px;
-  margin-top: 0;
-  margin-bottom: 0;
-} */
-
 .grow {
   transition: all 0.2s ease-in-out;
 }
