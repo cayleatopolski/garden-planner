@@ -12,7 +12,7 @@
   </form>
   <div id="searchResults">
     <ol>
-      <li class="plant" *ngFor="let plant of plantData">
+      <li class="plant" *ngFor="let plant of plantData; index as i">
         <p>
           {{ plant.common_name }}
         </p>
@@ -26,6 +26,9 @@
             (click)="addToFavorites(plant)"
             class="fas fa-heart"
           ></i>
+          <button id="details" (click)="getDetails(plant.id)">
+            Details
+          </button>
           <i
             id="add"
             (click)="
@@ -42,3 +45,5 @@
   </div>
 </div>
 <div id="overlay" (click)="toggleSearchModal()"></div>
+
+<!-- routerLink="/details" -->

@@ -58,6 +58,16 @@ export class GardenService {
     return combineLatest(detailObs);
   }
 
+  getDetails(id: number): Observable<any> {
+    return this.getAuth().pipe(
+      flatMap(token => {
+        return this.http.get(
+          `https://trefle.io/api/plants/${id}?token=${token}`
+        );
+      })
+    );
+  }
+
   getImages(searchTerm: any): Observable<any> {
     return this.http.get(
       `https://pixabay.com/api/?key=13595691-f1b1086d0aa3fd34e61442edf&q=${searchTerm}&image_type=photo`
@@ -67,6 +77,7 @@ export class GardenService {
   goToGarden(): void {
     this.router.navigate(["garden"]);
   }
+
   moveToFavorites(love: object) {
     this.favorites.push(love);
     console.log(this.favorites);

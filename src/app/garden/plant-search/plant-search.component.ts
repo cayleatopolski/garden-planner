@@ -14,6 +14,7 @@ export class PlantSearchComponent implements OnInit {
   @Output() addImageToGridEvent = new EventEmitter<any>();
   plantData: any[] = [];
   images: any[] = [];
+  details: any;
   // showSearchModal: boolean = true;
 
   constructor(private gardenService: GardenService) {}
@@ -52,5 +53,16 @@ export class PlantSearchComponent implements OnInit {
 
   addToFavorites(favorite: object) {
     this.gardenService.moveToFavorites(favorite);
+  }
+
+  getDetails(id: number) {
+    this.gardenService.getDetails(id).subscribe(response => {
+      this.details = response;
+      console.log(this.details);
+    });
+  }
+
+  sendDetails() {
+    return this.details;
   }
 }
