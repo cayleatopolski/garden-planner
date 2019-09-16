@@ -1,6 +1,12 @@
 <section id="garden">
   <div class="rotate">
     <p>Please Rotate Your Device.</p>
+<div class="container">
+  <div>
+    <app-plant-search
+      *ngIf="showSearchModal"
+      (addPlantToGridEvent)="addPlantToGrid($event)"
+    ></app-plant-search>
   </div>
   <div class="container">
     <div>
@@ -39,4 +45,11 @@
     </section>
   </div>
 </section>
+
+<img src="../../assets/370.gif" alt="" />
+
+<div class="rotate">
+  <p>Please Rotate Your Device.</p>
+  <img src="../../assets/large_happy-flowers-0217.png" alt="" />
+</div>
 <app-favorites></app-favorites>

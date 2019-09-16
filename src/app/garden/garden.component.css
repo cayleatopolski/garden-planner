@@ -37,9 +37,25 @@ button:hover {
   right: 0;
 }
 
+
 #garden {
   background: #328a26;
   background: radial-gradient(#adbf41, #328a26);
+
+#addPlot {
+  margin-top: 15px;
+}
+
+.container::-webkit-scrollbar {
+  width: 25px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  color: red;
+}
+
+.container::-webkit-scrollbar-track {
+  color: blue;
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
@@ -47,23 +63,30 @@ button:hover {
     transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
-    visibility: hidden;
+    display: none;
     height: 50vh;
   }
 
+  app-favorites {
+    display: none;
+  }
+
   .rotate {
-    visibility: visible;
     text-align: center;
     font-size: 3em;
     font-weight: bold;
     width: 80%;
     margin: auto;
   }
+  .rotate img {
+    height: 80%;
+    width: 80%;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1300px) and (orientation: portrait) {
   .rotate {
-    visibility: hidden;
+    display: none;
   }
 }
 
@@ -72,6 +95,6 @@ button:hover {
     visibility: visible;
   }
   .rotate {
-    visibility: hidden;
+    display: none;
   }
 }
