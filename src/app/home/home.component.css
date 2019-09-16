@@ -10,6 +10,36 @@ div {
   background: radial-gradient(#adbf41, #328a26);
 }
 
+@font-face {
+  font-family: "Decovar Regular24";
+  src: url("DecovarAlpha-VF.ttf");
+}
+
+h1 {
+  font-size: 20vw;
+  font-weight: 400;
+  font-family: "Decovar Regular24";
+  font-variation-settings: "INLN" 400, "SWRM" 1000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: url(./grass.jpg);
+  background-size: 30%;
+  background-repeat: repeat;
+  text-shadow: 2px 2px 5px rgba(#2a4308, 0.4);
+  animation: grow 4s linear infinite;
+}
+
+h1::before {
+  text-shadow: 1px 1px 2px rgba(#2a4308, 0.5), -1px 1px 2px rgba(#2a4308, 0.5),
+    -1px -1px 2px rgba(#2a4308, 0.5), 1px -1px 2px rgba(#2a4308, 0.5),
+    3px 3px 20px rgba(#000, 0.5);
+}
+
+h1::after {
+  color: #421f00;
+  font-variation-settings: "INLN" 0;
+}
+
 p {
   font-family: "Karla", sans-serif;
   color: grey;
@@ -33,7 +63,7 @@ span {
 }
 
 footer {
-  font-size: 10px;
+  font-size: 12px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -41,7 +71,7 @@ footer {
   color: #fff;
 }
 
-@keyframes pulse {
+/* @keyframes pulse {
   from {
     transform: scale(1);
   }
@@ -61,7 +91,7 @@ h1 {
   font-size: 50px;
   margin-top: 0;
   margin-bottom: 0;
-}
+} */
 
 .grow {
   transition: all 0.2s ease-in-out;
