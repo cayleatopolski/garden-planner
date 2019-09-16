@@ -46,7 +46,7 @@ export class GardenComponent implements OnInit {
   }
 
   toggleSearchModal(): void {
-    console.log("doing my best to toggle");
     this.showSearchModal = !this.showSearchModal;
+    console.log(this.showSearchModal);
   }
 }

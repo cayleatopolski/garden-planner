@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { GardenService } from "../../services/garden.service";
 import { NgForm } from "@angular/forms";
 import { flatMap } from "rxjs/operators";
@@ -9,11 +9,12 @@ import { flatMap } from "rxjs/operators";
   styleUrls: ["./plant-search.component.css"]
 })
 export class PlantSearchComponent implements OnInit {
+  @Output() toggleSearchModalEvent = new EventEmitter<any>();
   @Output() addPlantToGridEvent = new EventEmitter<any>();
   @Output() addImageToGridEvent = new EventEmitter<any>();
   plantData: any[] = [];
   images: any[] = [];
-  showSearchModal: boolean = true;
+  // showSearchModal: boolean = true;
 
   constructor(private gardenService: GardenService) {}
 
@@ -47,8 +48,7 @@ export class PlantSearchComponent implements OnInit {
 
   //modal
   toggleSearchModal(): void {
-    console.log("doing my best to toggle");
-    this.showSearchModal = !this.showSearchModal;
+    this.toggleSearchModalEvent.emit();
   }
 
   addToFavorites(favorite: object) {
