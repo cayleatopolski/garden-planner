@@ -6,7 +6,6 @@
         (addPlantToGridEvent)="addPlantToGrid($event)"
         (addImageToGridEvent)="addImageToGrid($event)"
         (toggleSearchModalEvent)="toggleSearchModal()"
-
       ></app-plant-search>
     </div>
 
@@ -20,16 +19,12 @@
           *ngFor="let item of gardenGrid; index as i"
         >
           <button
-
             *ngIf="!item.plant"
-
             id="searchAdd"
             (click)="[toggleSearchModal(), addClickedIndex(i)]"
             (touchstart)="toggleSearchModal()"
           >
-
             <i class="fas fa-search-plus fa-lg"></i>
-
           </button>
           <div class="plant">
             <p *ngIf="item.plant">
@@ -46,7 +41,6 @@
             {{ item.plant.scientific_name }}
           </p> -->
           </div>
-
           <button
 
             id="searchAdd"
