@@ -41,10 +41,12 @@ img {
 
 #favorite {
   margin: 5px;
+  color: green;
 }
 
 #add {
   margin: 5px;
+  color: green;
 }
 
 input {
@@ -59,11 +61,15 @@ button {
 
 form {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 0 0 0;
 }
 
 #closeModal {
   position: absolute;
-  right: 16px;
+  right: 8px;
   top: 0;
   color: green;
 }
