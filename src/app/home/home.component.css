@@ -64,6 +64,7 @@ h1 {
   text-align: center;
   letter-spacing: 0.6rem;
 }
+
 h1::after,
 h1::before {
   content: attr(data-text);
