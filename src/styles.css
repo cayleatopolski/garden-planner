@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 * {
   padding: 0;
   margin: 0;
@@ -9,5 +10,6 @@ html {
   height: 100vh;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #328a26;
+  background: radial-gradient(#adbf41, #328a26);
 }
-@import "@angular/material/prebuilt-themes/deeppurple-amber.css";

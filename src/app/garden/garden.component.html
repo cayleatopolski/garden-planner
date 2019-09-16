@@ -1,3 +1,6 @@
+<section id="garden">
+  <div class="rotate">
+    <p>Please Rotate Your Device.</p>
 <div class="container">
   <div>
     <app-plant-search
@@ -5,6 +8,14 @@
       (addPlantToGridEvent)="addPlantToGrid($event)"
     ></app-plant-search>
   </div>
+  <div class="container">
+    <div>
+      <app-plant-search
+        *ngIf="showSearchModal"
+        (addPlantToGridEvent)="addPlantToGrid($event)"
+      ></app-plant-search>
+    </div>
+
 
   <section id="gridSection">
     <button id="addPlot" (click)="onAddHandler()">Add a plot</button>
@@ -22,20 +33,28 @@
           id="searchAdd"
           (click)="[toggleSearchModal(), addClickedIndex(i)]"
           (touchstart)="toggleSearchModal()"
+
         >
-          <i class="fas fa-search-plus fa-2x"></i>
-        </button>
-        <button
-          id="removePlant"
-          (click)="removePlant(i)"
-          (touchstart)="removePlant(i)"
-        >
-          <i class="far fa-trash-alt fa-lg"></i>
-        </button>
-      </gridster-item>
-    </gridster>
-  </section>
-</div>
+          <div class="plant"></div>
+          <button
+            id="searchAdd"
+            (click)="[toggleSearchModal(), addClickedIndex(i)]"
+            (touchstart)="toggleSearchModal()"
+          >
+            <i class="fas fa-search-plus fa-2x"></i>
+          </button>
+          <button
+            id="removePlant"
+            (click)="removePlant(i)"
+            (touchstart)="removePlant(i)"
+          >
+            <i class="far fa-trash-alt fa-lg"></i>
+          </button>
+        </gridster-item>
+      </gridster>
+    </section>
+  </div>
+</section>
 
 <img src="../../assets/370.gif" alt="" />
 
@@ -43,5 +62,4 @@
   <p>Please Rotate Your Device.</p>
   <img src="../../assets/large_happy-flowers-0217.png" alt="" />
 </div>
-
 <app-favorites></app-favorites>
