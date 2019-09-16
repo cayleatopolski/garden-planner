@@ -16,6 +16,13 @@
           [item]="item"
           *ngFor="let item of gardenGrid; index as i"
         >
+          <button
+            id="searchAdd"
+            (click)="[toggleSearchModal(), addClickedIndex(i)]"
+            (touchstart)="toggleSearchModal()"
+          >
+            <i class="fas fa-search-plus fa-2x"></i>
+          </button>
           <div class="plant">
             <p *ngIf="item.plant">
               {{ item.plant.common_name }}
@@ -25,13 +32,6 @@
           </p> -->
           </div>
 
-          <button
-            id="searchAdd"
-            (click)="[toggleSearchModal(), addClickedIndex(i)]"
-            (touchstart)="toggleSearchModal()"
-          >
-            <i class="fas fa-search-plus fa-2x"></i>
-          </button>
           <button
             id="removePlant"
             (click)="removePlant(i)"
