@@ -12,6 +12,7 @@ export class GardenService {
   private apiToken = null;
   favorites: any[] = [];
   clickedIndex: number = null;
+  details: any;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -58,16 +59,6 @@ export class GardenService {
     return combineLatest(detailObs);
   }
 
-  getDetails(id: number): Observable<any> {
-    return this.getAuth().pipe(
-      flatMap(token => {
-        return this.http.get(
-          `https://trefle.io/api/plants/${id}?token=${token}`
-        );
-      })
-    );
-  }
-
   getImages(searchTerm: any): Observable<any> {
     return this.http.get(
       `https://pixabay.com/api/?key=13595691-f1b1086d0aa3fd34e61442edf&q=${searchTerm}&image_type=photo`
@@ -85,5 +76,14 @@ export class GardenService {
 
   getFavorites(): any[] {
     return this.favorites;
+  }
+
+  setDetails(details: any) {
+    this.details = details;
+    console.log(this.details);
+  }
+
+  showDetails() {
+    return this.details;
   }
 }

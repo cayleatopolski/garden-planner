@@ -55,14 +55,7 @@ export class PlantSearchComponent implements OnInit {
     this.gardenService.moveToFavorites(favorite);
   }
 
-  getDetails(id: number) {
-    this.gardenService.getDetails(id).subscribe(response => {
-      this.details = response;
-      console.log(this.details);
-    });
-  }
-
-  sendDetails() {
-    return this.details;
+  setDetails(plant: any) {
+    this.gardenService.setDetails(plant);
   }
 }

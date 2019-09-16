@@ -26,7 +26,11 @@
             (click)="addToFavorites(plant)"
             class="fas fa-heart"
           ></i>
-          <button id="details" (click)="getDetails(plant.id)">
+          <button
+            id="details"
+            routerLink="/details"
+            (click)="[setDetails(plant)]"
+          >
             Details
           </button>
           <i
