@@ -46,6 +46,7 @@ button:hover {
   position: absolute;
   bottom: 4px;
   right: 1px;
+  color: green;
 }
 
 .plant {

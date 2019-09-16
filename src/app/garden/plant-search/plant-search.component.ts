@@ -42,7 +42,6 @@ export class PlantSearchComponent implements OnInit {
 
     this.gardenService.getImages(form.value.searchTerm).subscribe(response => {
       this.images = response;
-      console.log(this.images);
     });
   }
 
