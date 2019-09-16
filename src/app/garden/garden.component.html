@@ -18,24 +18,30 @@
           [item]="item"
           *ngFor="let item of gardenGrid; index as i"
         >
+          <button
+            *ngIf="!item.plant"
+            id="searchAdd"
+            (click)="[toggleSearchModal(), addClickedIndex(i)]"
+            (touchstart)="toggleSearchModal()"
+          >
+            <i class="fas fa-search-plus fa-lg"></i>
+          </button>
           <div class="plant">
             <p *ngIf="item.plant">
               {{ item.plant.common_name }}
             </p>
 
-            <img *ngIf="item.image" src="{{ item.image }}" alt="" />
+            <img
+              class="plantImg"
+              *ngIf="item.image"
+              src="{{ item.image }}"
+              alt=""
+            />
             <!-- <p *ngIf="item.plant.common_name === null">
             {{ item.plant.scientific_name }}
           </p> -->
           </div>
 
-          <button
-            id="searchAdd"
-            (click)="[toggleSearchModal(), addClickedIndex(i)]"
-            (touchstart)="toggleSearchModal()"
-          >
-            <i class="fas fa-search-plus fa-2x"></i>
-          </button>
           <button
             id="removePlant"
             (click)="removePlant(i)"
@@ -52,7 +58,7 @@
 <img src="../../assets/370.gif" alt="" />
 
 <div class="rotate">
-  <p>Please Rotate Your Device.</p>
+  <p id="rotate">Please Rotate Your Device.</p>
   <img src="../../assets/large_happy-flowers-0217.png" alt="" />
 </div>
 <app-favorites></app-favorites>

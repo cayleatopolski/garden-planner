@@ -12,7 +12,7 @@
   </form>
   <div id="searchResults">
     <ol>
-      <li *ngFor="let plant of plantData">
+      <li class="plant" *ngFor="let plant of plantData">
         <p>
           {{ plant.common_name }}
         </p>
@@ -20,16 +20,23 @@
           {{ plant.scientific_name }}
         </p>
         <img src="{{ images.hits[2].webformatURL }}" alt="" />
-        <button (click)="addToFavorites(plant)">
-          <i class="fas fa-heart"></i>
-        </button>
-        <button
-          (click)="
-            [addPlantToGrid(plant), addImageToGrid(images.hits[2].webformatURL)]
-          "
-        >
-          Add to garden
-        </button>
+        <div>
+          <i
+            id="favorite"
+            (click)="addToFavorites(plant)"
+            class="fas fa-heart"
+          ></i>
+          <i
+            id="add"
+            (click)="
+              [
+                addPlantToGrid(plant),
+                addImageToGrid(images.hits[2].webformatURL)
+              ]
+            "
+            class="fas fa-plus-circle"
+          ></i>
+        </div>
       </li>
     </ol>
   </div>
