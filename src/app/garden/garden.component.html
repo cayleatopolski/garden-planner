@@ -6,13 +6,12 @@
         (addPlantToGridEvent)="addPlantToGrid($event)"
         (addImageToGridEvent)="addImageToGrid($event)"
         (toggleSearchModalEvent)="toggleSearchModal()"
-
       ></app-plant-search>
     </div>
 
     <section id="gridSection">
       <button id="addPlot" (click)="onAddHandler()">
-        <i class="fas fa-plus-square fa-3x"></i>
+        <i class="fas fa-plus-square fa-3x grow"></i>
       </button>
       <gridster [options]="options">
         <gridster-item
@@ -20,16 +19,12 @@
           *ngFor="let item of gardenGrid; index as i"
         >
           <button
-
             *ngIf="!item.plant"
-
             id="searchAdd"
             (click)="[toggleSearchModal(), addClickedIndex(i)]"
             (touchstart)="toggleSearchModal()"
           >
-
             <i class="fas fa-search-plus fa-lg"></i>
-
           </button>
           <div class="plant">
             <p *ngIf="item.plant">
@@ -46,13 +41,12 @@
             {{ item.plant.scientific_name }}
           </p> -->
           </div>
-
           <button
             id="removePlant"
             (click)="removePlant(i)"
             (touchstart)="removePlant(i)"
           >
-            <i class="far fa-trash-alt fa-lg"></i>
+            <i class="far fa-trash-alt fa-lg grow"></i>
           </button>
         </gridster-item>
       </gridster>
