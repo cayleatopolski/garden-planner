@@ -10,6 +10,7 @@ import { flatMap } from "rxjs/operators";
 })
 export class PlantSearchComponent implements OnInit {
   @Output() addPlantToGridEvent = new EventEmitter<any>();
+  @Output() addImageToGridEvent = new EventEmitter<any>();
   plantData: any[] = [];
   images: any[] = [];
   showSearchModal: boolean = true;
@@ -20,6 +21,10 @@ export class PlantSearchComponent implements OnInit {
 
   addPlantToGrid(plant: any) {
     this.addPlantToGridEvent.emit(plant);
+  }
+
+  addImageToGrid(image: any) {
+    this.addImageToGridEvent.emit(image);
   }
 
   submitForm(form: NgForm) {

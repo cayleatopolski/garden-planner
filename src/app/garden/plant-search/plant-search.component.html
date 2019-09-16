@@ -23,7 +23,13 @@
         <button (click)="addToFavorites(plant)">
           <i class="fas fa-heart"></i>
         </button>
-        <button (click)="addPlantToGrid(plant)">Add to garden</button>
+        <button
+          (click)="
+            [addPlantToGrid(plant), addImageToGrid(images.hits[2].webformatURL)]
+          "
+        >
+          Add to garden
+        </button>
       </li>
     </ol>
   </div>

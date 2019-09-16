@@ -7,6 +7,7 @@
       <app-plant-search
         *ngIf="showSearchModal"
         (addPlantToGridEvent)="addPlantToGrid($event)"
+        (addImageToGridEvent)="addImageToGrid($event)"
       ></app-plant-search>
     </div>
 
@@ -21,6 +22,8 @@
             <p *ngIf="item.plant">
               {{ item.plant.common_name }}
             </p>
+
+            <img *ngIf="item.image" src="{{ item.image }}" alt="" />
             <!-- <p *ngIf="item.plant.common_name === null">
             {{ item.plant.scientific_name }}
           </p> -->

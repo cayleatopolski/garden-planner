@@ -33,6 +33,10 @@ export class GardenComponent implements OnInit {
     this.gardenGrid[this.clickedIndex].plant = plant;
   }
 
+  addImageToGrid(image: any) {
+    this.gardenGrid[this.clickedIndex].image = image;
+  }
+
   onAddHandler() {
     this.gardenGridService.addItem();
   }
