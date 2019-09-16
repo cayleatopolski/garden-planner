@@ -5,8 +5,6 @@ import { GridsterConfig, GridsterItem } from "angular-gridster2";
   providedIn: "root"
 })
 export class GardenGridService {
-  favorites: any[] = [];
-
   public options: GridsterConfig = {
     draggable: {
       enabled: true
@@ -23,7 +21,6 @@ export class GardenGridService {
     disableWarnings: true
   };
   public gardenGrid: GridsterItem[] = [];
-  // showSearchModal: boolean = false;
 
   constructor() {
     this.gardenGrid = [
@@ -40,7 +37,6 @@ export class GardenGridService {
   }
 
   addItem(): void {
-    // console.log("working");
     this.gardenGrid.push({
       cols: 1,
       rows: 1,
@@ -49,27 +45,7 @@ export class GardenGridService {
     });
   }
 
-  //   deleteItem(id: string): void {
-  //     const item = this.gardenGrid.find(d => d.id === id);
-  //     console.log(this.gardenGrid.indexOf(item));
-  //     this.gardenGrid.splice(this.gardenGrid.indexOf(item), 1);
-  //   }
-
-  // toggleSearchModal(): void {
-  //   console.log("doing my best to toggle");
-  //   this.showSearchModal = !this.showSearchModal;
-  // }
-
   addPlantToGrid(index: number, plant: any) {
     this.gardenGrid[index].plant = plant;
   }
-
-  // addPlant(plant: any) {
-  //   this.gardenGrid.push({
-  //     cols: 1,
-  //     rows: 1,
-  //     x: 0,
-  //     y: 0
-  //   });
-  // }
 }

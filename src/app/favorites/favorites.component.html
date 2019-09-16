@@ -1,7 +1,13 @@
 <div>
   <ol>
     <li *ngFor="let favorite of favorites">
-      {{ favorite.scientific_name }}
+      <p>
+        {{ favorite.common_name }}
+      </p>
+      <p *ngIf="favorite.common_name === null">
+        {{ favorite.scientific_name }}
+      </p>
+
       <button (click)="add()">Add</button>
     </li>
   </ol>

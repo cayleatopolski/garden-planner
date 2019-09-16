@@ -27,21 +27,15 @@ export class GardenComponent implements OnInit {
 
   addClickedIndex(index: number) {
     this.clickedIndex = index;
-    console.log(this.clickedIndex);
   }
 
   addPlantToGrid(plant: any) {
     this.gardenGrid[this.clickedIndex].plant = plant;
-    console.log(this.gardenGrid);
   }
 
   onAddHandler() {
     this.gardenGridService.addItem();
   }
-
-  // deleteItem(id: string) {
-  //   this.gardenGridService.deleteItem(id);
-  // }
 
   removePlant(index: number): void {
     this.gardenGrid.splice(index, 1);

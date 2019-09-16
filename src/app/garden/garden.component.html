@@ -16,14 +16,24 @@
       ></app-plant-search>
     </div>
 
-    <section id="gridSection">
-      <button id="addPlot" (click)="onAddHandler()">
-        <i class="fas fa-plus-square fa-3x"></i>
-      </button>
-      <gridster [options]="options">
-        <gridster-item
-          [item]="item"
-          *ngFor="let item of gardenGrid; index as i"
+
+  <section id="gridSection">
+    <button id="addPlot" (click)="onAddHandler()">Add a plot</button>
+    <gridster [options]="options">
+      <gridster-item [item]="item" *ngFor="let item of gardenGrid; index as i">
+        <div class="plant">
+          <p *ngIf="item.plant">
+            {{ item.plant.common_name }}
+          </p>
+          <!-- <p *ngIf="item.plant.common_name === null">
+            {{ item.plant.scientific_name }}
+          </p> -->
+        </div>
+        <button
+          id="searchAdd"
+          (click)="[toggleSearchModal(), addClickedIndex(i)]"
+          (touchstart)="toggleSearchModal()"
+
         >
           <div class="plant"></div>
           <button
