@@ -10,12 +10,17 @@
     </div>
 
     <section id="gridSection">
-      <i
-        id="addPlot"
-        (click)="onAddHandler()"
-        class="fas fa-plus-square fa-3x grow"
-      ></i>
-
+      <button
+        matTooltip="Add a plot"
+        matTooltipPosition="right"
+        [matTooltipShowDelay]="400"
+      >
+        <i
+          id="addPlot"
+          (click)="onAddHandler()"
+          class="fas fa-plus-square fa-2x grow"
+        ></i>
+      </button>
       <gridster [options]="options">
         <gridster-item
           [item]="item"
@@ -26,8 +31,11 @@
             id="searchAdd"
             (click)="[toggleSearchModal(), addClickedIndex(i)]"
             (touchstart)="toggleSearchModal()"
+            matTooltip="Search for a plant"
+            [matTooltipShowDelay]="600"
+            matTooltipPosition="right"
           >
-            <i class="fas fa-search-plus fa-lg"></i>
+            <i class="fas fa-search-plus fa-lg grow"></i>
           </button>
           <div class="plant">
             <div *ngIf="item.plant">

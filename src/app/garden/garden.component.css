@@ -14,7 +14,7 @@ gridster {
 
 #rotate {
   margin-top: 50px;
-  color: #413c58;
+  color: #d6f599;
   padding-bottom: 40px;
 }
 
@@ -42,6 +42,7 @@ button:hover {
   position: absolute;
   top: 4px;
   left: 1px;
+  padding: 3px;
 }
 
 #removePlant {
@@ -68,7 +69,8 @@ button:hover {
 }
 
 #addPlot {
-  margin-top: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   color: #d6f599;
 }
 
