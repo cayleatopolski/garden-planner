@@ -12,10 +12,12 @@ export class PlantSearchComponent implements OnInit {
   @Output() toggleSearchModalEvent = new EventEmitter<any>();
   @Output() addPlantToGridEvent = new EventEmitter<any>();
   @Output() addImageToGridEvent = new EventEmitter<any>();
+  @Output() toggleDetailsModalEvent = new EventEmitter<any>();
+  @Output() setDetailsEvent = new EventEmitter<any>();
   plantData: any[] = [];
   images: any[] = [];
   details: any;
-  // showSearchModal: boolean = true;
+  // showDetailsModal: boolean = false;
 
   constructor(private gardenService: GardenService) {}
 
@@ -51,11 +53,15 @@ export class PlantSearchComponent implements OnInit {
     this.toggleSearchModalEvent.emit();
   }
 
+  toggleDetailsModal(): void {
+    this.toggleDetailsModalEvent.emit();
+  }
+
   addToFavorites(favorite: object) {
     this.gardenService.moveToFavorites(favorite);
   }
 
   setDetails(plant: any) {
-    this.gardenService.setDetails(plant);
+    this.setDetailsEvent.emit(plant);
   }
 }
