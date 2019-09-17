@@ -8,15 +8,26 @@
     <ol>
       <li *ngFor="let favorite of favorites">
         <p>
-          {{ favorite.common_name }}
+          {{ favorite.love.common_name }}
         </p>
-        <p *ngIf="favorite.common_name === null">
-          {{ favorite.scientific_name }}
+        <p *ngIf="favorite.love.common_name === null">
+          {{ favorite.love.scientific_name }}
         </p>
-        <button (click)="[setDetails(favorite), toggleDetailsModal()]">
-          Details
-        </button>
-        <button (click)="add()">Add</button>
+        <img src="{{ favorite.image }}" alt="" />
+        <div class="btnDiv">
+          <button
+            id="favDetails"
+            (click)="[setDetails(favorite.love), toggleDetailsModal()]"
+          >
+            Details
+          </button>
+
+          <i
+            id="addFav"
+            (click)="addPlantToGrid(favorite.love, favorite.image)"
+            class="fas fa-plus-circle"
+          ></i>
+        </div>
       </li>
     </ol>
   </div>

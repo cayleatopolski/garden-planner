@@ -29,4 +29,8 @@ export class FavoritesComponent implements OnInit {
   toggleDetailsModal(): void {
     this.toggleDetailsModalEvent.emit();
   }
+
+  addPlantToGrid(plant: any, image: any) {
+    this.gardenGridService.addFavoriteToGrid(plant, image);
+  }
 }
