@@ -77,4 +77,7 @@
   <p id="rotate">Please Rotate Your Device.</p>
   <img src="../../assets/large_happy-flowers-0217.png" alt="" />
 </div>
-<app-favorites (toggleDetailsModalEvent)="toggleDetailsModal()"></app-favorites>
+<app-favorites
+  (toggleDetailsModalEvent)="toggleDetailsModal()"
+  (setDetailsEvent)="setDetails($event)"
+></app-favorites>

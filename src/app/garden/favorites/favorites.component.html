@@ -8,7 +8,7 @@
         {{ favorite.scientific_name }}
       </p>
 
-      <button routerLink="/details" (click)="setDetails(favorite)">
+      <button (click)="[setDetails(favorite), toggleDetailsModal()]">
         Details
       </button>
       <button (click)="add()">Add</button>

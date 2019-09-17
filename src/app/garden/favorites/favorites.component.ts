@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { GardenService } from "../../services/garden.service";
 import { GardenGridService } from "../../services/garden-grid.service";
 
@@ -8,6 +8,8 @@ import { GardenGridService } from "../../services/garden-grid.service";
   styleUrls: ["./favorites.component.css"]
 })
 export class FavoritesComponent implements OnInit {
+  @Output() toggleDetailsModalEvent = new EventEmitter<any>();
+  @Output() setDetailsEvent = new EventEmitter<any>();
   favorites: any[];
   details: any;
 
@@ -21,6 +23,10 @@ export class FavoritesComponent implements OnInit {
   }
 
   setDetails(plant: any) {
-    this.gardenService.setDetails(plant);
+    this.setDetailsEvent.emit(plant);
+  }
+
+  toggleDetailsModal(): void {
+    this.toggleDetailsModalEvent.emit();
   }
 }
