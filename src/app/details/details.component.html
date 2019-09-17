@@ -1,6 +1,7 @@
 <div id="modal-container2">
   <div>
     <h1>{{ details.common_name }}</h1>
+    <h1 *ngIf="details.common_name === null">{{ details.scientific_name }}</h1>
     <p>{{ details.main_species.family_common_name }}</p>
   </div>
   <p>{{ details.main_species.duration }}</p>

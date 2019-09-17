@@ -68,6 +68,7 @@ button:hover {
 #addPlot {
   margin-top: 15px;
   color: lightgreen;
+  font-size: 30px;
 }
 
 .container::-webkit-scrollbar {
