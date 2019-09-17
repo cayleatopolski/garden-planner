@@ -3,6 +3,7 @@ import { GardenService } from "../../services/garden.service";
 import { NgForm } from "@angular/forms";
 import { flatMap } from "rxjs/operators";
 
+
 @Component({
   selector: "app-plant-search",
   templateUrl: "./plant-search.component.html",
