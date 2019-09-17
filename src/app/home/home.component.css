@@ -8,6 +8,7 @@ div {
   margin: 0;
 }
 
+/* DON'T CHANGE ANY OF THIS OR DOWN TO TO LINE 78*/
 @font-face {
   font-family: "Decovar Regular24";
   src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Decovar-VF.ttf");
@@ -74,7 +75,7 @@ h1::before {
   top: 0;
 }
 
-/* other stuff */
+/* DON'T CHANGE ANYTHING ABOVE THIS */
 p {
   font-family: "Karla", sans-serif;
   color: grey;
