@@ -3,7 +3,6 @@ import { GardenService } from "../../services/garden.service";
 import { NgForm } from "@angular/forms";
 import { flatMap } from "rxjs/operators";
 
-
 @Component({
   selector: "app-plant-search",
   templateUrl: "./plant-search.component.html",
@@ -13,9 +12,12 @@ export class PlantSearchComponent implements OnInit {
   @Output() toggleSearchModalEvent = new EventEmitter<any>();
   @Output() addPlantToGridEvent = new EventEmitter<any>();
   @Output() addImageToGridEvent = new EventEmitter<any>();
+  @Output() toggleDetailsModalEvent = new EventEmitter<any>();
+  @Output() setDetailsEvent = new EventEmitter<any>();
   plantData: any[] = [];
   images: any[] = [];
-  // showSearchModal: boolean = true;
+  details: any;
+  // showDetailsModal: boolean = false;
 
   constructor(private gardenService: GardenService) {}
 
@@ -43,7 +45,6 @@ export class PlantSearchComponent implements OnInit {
 
     this.gardenService.getImages(form.value.searchTerm).subscribe(response => {
       this.images = response;
-      console.log(this.images);
     });
   }
 
@@ -52,7 +53,15 @@ export class PlantSearchComponent implements OnInit {
     this.toggleSearchModalEvent.emit();
   }
 
-  addToFavorites(favorite: object) {
-    this.gardenService.moveToFavorites(favorite);
+  toggleDetailsModal(): void {
+    this.toggleDetailsModalEvent.emit();
+  }
+
+  addToFavorites(favorite: object, image: any) {
+    this.gardenService.moveToFavorites(favorite, image);
+  }
+
+  setDetails(plant: any) {
+    this.setDetailsEvent.emit(plant);
   }
 }

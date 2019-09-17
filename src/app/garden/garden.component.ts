@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { GridsterConfig, GridsterItem } from "angular-gridster2";
 import { GardenGridService } from "../services/garden-grid.service";
+import { GardenService } from "../services/garden.service";
 
 @Component({
   selector: "app-garden",
@@ -17,9 +18,13 @@ export class GardenComponent implements OnInit {
 
   gardenGrid: GridsterItem[] = [];
   showSearchModal: boolean = false;
+  showDetailsModal: boolean = false;
   clickedIndex: number = null;
 
-  constructor(private gardenGridService: GardenGridService) {}
+  constructor(
+    private gardenGridService: GardenGridService,
+    private gardenService: GardenService
+  ) {}
 
   ngOnInit() {
     this.gardenGrid = this.gardenGridService.gardenGrid;
@@ -47,6 +52,14 @@ export class GardenComponent implements OnInit {
 
   toggleSearchModal(): void {
     this.showSearchModal = !this.showSearchModal;
-    console.log(this.showSearchModal);
+  }
+
+  toggleDetailsModal(): void {
+    this.showDetailsModal = !this.showDetailsModal;
+    console.log("toggle");
+  }
+
+  setDetails(plant: any) {
+    this.gardenService.setDetails(plant);
   }
 }
