@@ -13,6 +13,9 @@
         <p *ngIf="favorite.common_name === null">
           {{ favorite.scientific_name }}
         </p>
+        <button routerLink="/details" (click)="setDetails(favorite)">
+        Details
+      </button>
         <button (click)="add()">Add</button>
       </li>
     </ol>
@@ -28,6 +31,12 @@
       <p *ngIf="favorite.common_name === null">
         {{ favorite.scientific_name }}
       </p>
+
+
+      <button routerLink="/details" (click)="setDetails(favorite)">
+        Details
+      </button>
+
       <button (click)="add()">Add</button>
     </li>
   </ol>

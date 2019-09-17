@@ -12,6 +12,7 @@ export class GardenService {
   private apiToken = null;
   favorites: any[] = [];
   clickedIndex: number = null;
+  details: any;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -67,6 +68,7 @@ export class GardenService {
   goToGarden(): void {
     this.router.navigate(["garden"]);
   }
+
   moveToFavorites(love: object) {
     this.favorites.push(love);
     console.log(this.favorites);
@@ -74,5 +76,14 @@ export class GardenService {
 
   getFavorites(): any[] {
     return this.favorites;
+  }
+
+  setDetails(details: any) {
+    this.details = details;
+    console.log(this.details);
+  }
+
+  showDetails() {
+    return this.details;
   }
 }

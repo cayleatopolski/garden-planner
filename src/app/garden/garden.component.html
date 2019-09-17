@@ -10,9 +10,12 @@
     </div>
 
     <section id="gridSection">
-      <button id="addPlot" (click)="onAddHandler()">
-        <i class="fas fa-plus-square fa-3x grow"></i>
-      </button>
+      <i
+        id="addPlot"
+        (click)="onAddHandler()"
+        class="fas fa-plus-square fa-3x grow"
+      ></i>
+
       <gridster [options]="options">
         <gridster-item
           [item]="item"
@@ -27,27 +30,28 @@
             <i class="fas fa-search-plus fa-lg"></i>
           </button>
           <div class="plant">
-            <p *ngIf="item.plant">
-              {{ item.plant.common_name }}
-            </p>
-
+            <div *ngIf="item.plant">
+              <p>
+                {{ item.plant.common_name }}
+              </p>
+              <p *ngIf="item.plant.common_name === null">
+                {{ item.plant.scientific_name }}
+              </p>
+            </div>
             <img
               class="plantImg"
               *ngIf="item.image"
               src="{{ item.image }}"
               alt=""
             />
-            <!-- <p *ngIf="item.plant.common_name === null">
-            {{ item.plant.scientific_name }}
-          </p> -->
           </div>
-          <button
+
+          <i
             id="removePlant"
             (click)="removePlant(i)"
             (touchstart)="removePlant(i)"
-          >
-            <i class="far fa-trash-alt fa-lg grow"></i>
-          </button>
+            class="far fa-trash-alt fa-lg grow"
+          ></i>
         </gridster-item>
       </gridster>
     </section>
