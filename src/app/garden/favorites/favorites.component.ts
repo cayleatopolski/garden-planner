@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { GardenService } from "../services/garden.service";
-import { GardenGridService } from "../services/garden-grid.service";
+import { GardenService } from "../../services/garden.service";
+import { GardenGridService } from "../../services/garden-grid.service";
 
 @Component({
   selector: "app-favorites",

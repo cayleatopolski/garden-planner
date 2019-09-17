@@ -14,7 +14,7 @@ import { MaterialModule } from "../Material-Module";
 import { RouterModule, Routes } from "@angular/router";
 import { GridsterModule } from "angular-gridster2";
 import { GardenGridService } from "./services/garden-grid.service";
-import { FavoritesComponent } from "./favorites/favorites.component";
+import { FavoritesComponent } from "./garden/favorites/favorites.component";
 import { DetailsComponent } from "./garden/details/details.component";
 
 const appRoutes: Routes = [

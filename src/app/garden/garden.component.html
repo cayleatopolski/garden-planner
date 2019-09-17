@@ -42,7 +42,7 @@
             <div
               class="plantName"
               *ngIf="item.plant"
-              (click)="[setDetails(item.plant)]"
+              (click)="[setDetails(item.plant), toggleDetailsModal()]"
             >
               <p>
                 {{ item.plant.common_name }}
