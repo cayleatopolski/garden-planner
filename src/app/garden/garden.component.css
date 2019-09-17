@@ -82,6 +82,10 @@ button:hover {
   color: #d6f599;
 }
 
+p {
+  padding: 2px 5px;
+}
+
 .container::-webkit-scrollbar {
   width: 25px;
 }
