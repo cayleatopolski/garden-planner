@@ -1,3 +1,24 @@
+<mat-expansion-panel id="drawer">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Click here to show favorites
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div id="favoritesContent">
+    <ol>
+      <li *ngFor="let favorite of favorites">
+        <p>
+          {{ favorite.common_name }}
+        </p>
+        <p *ngIf="favorite.common_name === null">
+          {{ favorite.scientific_name }}
+        </p>
+        <button (click)="add()">Add</button>
+      </li>
+    </ol>
+  </div>
+</mat-expansion-panel>
+<!-- 
 <div>
   <ol>
     <li *ngFor="let favorite of favorites">
@@ -7,8 +28,7 @@
       <p *ngIf="favorite.common_name === null">
         {{ favorite.scientific_name }}
       </p>
-
       <button (click)="add()">Add</button>
     </li>
   </ol>
-</div>
+</div> -->

@@ -14,6 +14,8 @@ gridster {
 
 #rotate {
   margin-top: 50px;
+  color: #413c58;
+  padding-bottom: 40px;
 }
 
 button {
@@ -66,7 +68,7 @@ button:hover {
 
 #addPlot {
   margin-top: 15px;
-  color: lightgreen;
+  color: #d6f599;
 }
 
 .container::-webkit-scrollbar {
