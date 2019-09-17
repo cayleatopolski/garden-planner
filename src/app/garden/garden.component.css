@@ -14,14 +14,14 @@ gridster {
 
 #rotate {
   margin-top: 50px;
-  color: #413c58;
+  color: #d6f599;
   padding-bottom: 40px;
 }
 
 button {
   background-color: transparent;
   border: none;
-  color: green;
+  color: #d6f599;
   font-size: 20px;
 }
 
@@ -68,7 +68,8 @@ button:hover {
 }
 
 #addPlot {
-  margin-top: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   color: #d6f599;
 }
 

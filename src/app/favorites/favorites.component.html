@@ -1,43 +1,25 @@
-<mat-expansion-panel id="drawer">
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      Click here to show favorites
-    </mat-panel-title>
-  </mat-expansion-panel-header>
-  <div id="favoritesContent">
-    <ol>
-      <li *ngFor="let favorite of favorites">
-        <p>
-          {{ favorite.common_name }}
-        </p>
-        <p *ngIf="favorite.common_name === null">
-          {{ favorite.scientific_name }}
-        </p>
-        <button routerLink="/details" (click)="setDetails(favorite)">
-        Details
-      </button>
-        <button (click)="add()">Add</button>
-      </li>
-    </ol>
-  </div>
-</mat-expansion-panel>
-<!-- 
-<div>
-  <ol>
-    <li *ngFor="let favorite of favorites">
-      <p>
-        {{ favorite.common_name }}
-      </p>
-      <p *ngIf="favorite.common_name === null">
-        {{ favorite.scientific_name }}
-      </p>
-
-
-      <button routerLink="/details" (click)="setDetails(favorite)">
-        Details
-      </button>
-
-      <button (click)="add()">Add</button>
-    </li>
-  </ol>
-</div> -->
+<section id="favoritesDrawer">
+  <mat-expansion-panel id="drawer">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Favorite Plants
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div id="favoritesContent">
+      <ol>
+        <li *ngFor="let favorite of favorites">
+          <p>
+            {{ favorite.common_name }}
+          </p>
+          <p *ngIf="favorite.common_name === null">
+            {{ favorite.scientific_name }}
+          </p>
+          <button routerLink="/details" (click)="setDetails(favorite)">
+            Details
+          </button>
+          <button (click)="add()">Add</button>
+        </li>
+      </ol>
+    </div>
+  </mat-expansion-panel>
+</section>

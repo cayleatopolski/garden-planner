@@ -16,6 +16,7 @@ import { GridsterModule } from "angular-gridster2";
 import { GardenGridService } from "./services/garden-grid.service";
 import { FavoritesComponent } from "./favorites/favorites.component";
 import { DetailsComponent } from "./details/details.component";
+import { MatTooltipModule } from "@angular/material";
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     GridsterModule,
     MatSidenavModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MatTooltipModule
   ],
   providers: [GardenService, GardenGridService],
   bootstrap: [AppComponent]
