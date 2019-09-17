@@ -23,13 +23,12 @@
         <div>
           <i
             id="favorite"
-            (click)="addToFavorites(plant)"
+            (click)="addToFavorites(plant, images.hits[2].webformatURL)"
             class="fas fa-heart"
           ></i>
           <button
             id="details"
-            routerLink="/details"
-            (click)="[setDetails(plant)]"
+            (click)="[setDetails(plant), toggleDetailsModal()]"
           >
             Details
           </button>
@@ -49,5 +48,3 @@
   </div>
 </div>
 <div id="overlay" (click)="toggleSearchModal()"></div>
-
-<!-- routerLink="/details" -->

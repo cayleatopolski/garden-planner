@@ -11,7 +11,9 @@ html {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background: #328a26;
-  background: radial-gradient(#adbf41, #328a26);
+  background: radial-gradient(#adbf41, #328a26) no-repeat;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .mdTooltipClass {

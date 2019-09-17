@@ -1,0 +1,81 @@
+<<<<<<< HEAD:src/app/favorites/favorites.component.html
+<section id="favoritesDrawer">
+  <mat-expansion-panel id="drawer">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Favorite Plants
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div id="favoritesContent">
+      <ol>
+        <li *ngFor="let favorite of favorites">
+          <p>
+            {{ favorite.common_name }}
+          </p>
+          <p *ngIf="favorite.common_name === null">
+            {{ favorite.scientific_name }}
+          </p>
+          <button routerLink="/details" (click)="setDetails(favorite)">
+            Details
+          </button>
+          <button (click)="add()">Add</button>
+        </li>
+      </ol>
+    </div>
+  </mat-expansion-panel>
+</section>
+=======
+<mat-expansion-panel id="drawer">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Click here to show favorites
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div id="favoritesContent">
+    <ol>
+      <li *ngFor="let favorite of favorites">
+        <p>
+          {{ favorite.love.common_name }}
+        </p>
+        <p *ngIf="favorite.love.common_name === null">
+          {{ favorite.love.scientific_name }}
+        </p>
+        <img src="{{ favorite.image }}" alt="" />
+        <div class="btnDiv">
+          <button
+            id="favDetails"
+            (click)="[setDetails(favorite.love), toggleDetailsModal()]"
+          >
+            Details
+          </button>
+
+          <i
+            id="addFav"
+            (click)="addPlantToGrid(favorite.love, favorite.image)"
+            class="fas fa-plus-circle"
+          ></i>
+        </div>
+      </li>
+    </ol>
+  </div>
+</mat-expansion-panel>
+<!-- 
+<div>
+  <ol>
+    <li *ngFor="let favorite of favorites">
+      <p>
+        {{ favorite.common_name }}
+      </p>
+      <p *ngIf="favorite.common_name === null">
+        {{ favorite.scientific_name }}
+      </p>
+
+      <button (click)="[setDetails(favorite), toggleDetailsModal()]">
+        Details
+      </button>
+
+      <button (click)="add()">Add</button>
+    </li>
+  </ol>
+</div> -->
+>>>>>>> 095fc317d414f871e54897e3e12922231905ac08:src/app/garden/favorites/favorites.component.html

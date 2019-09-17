@@ -1,0 +1,39 @@
+#drawer {
+  background: #d6f599;
+  color: #1b998b;
+  width: 80vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+ol {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+}
+
+img {
+  width: 100%;
+  margin: 5px;
+}
+
+#addFav {
+  margin: 5px;
+  color: green;
+}
+
+#favDetails {
+  background: green;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 50px;
+  margin: 5px 0 0 0;
+}

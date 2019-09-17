@@ -59,13 +59,21 @@ button:hover {
   left: 4px;
 }
 
-.plantImg {
-  width: 75%;
+.plantName {
+  z-index: 10;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(144, 238, 144, 0.8);
 }
 
-#garden {
-  background: #328a26;
-  background: radial-gradient(#adbf41, #328a26);
+.plantImg {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -17;
+  left: 0;
 }
 
 #addPlot {
