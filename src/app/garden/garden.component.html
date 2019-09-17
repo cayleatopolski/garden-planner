@@ -6,7 +6,16 @@
         (addPlantToGridEvent)="addPlantToGrid($event)"
         (addImageToGridEvent)="addImageToGrid($event)"
         (toggleSearchModalEvent)="toggleSearchModal()"
+        (toggleDetailsModalEvent)="toggleDetailsModal()"
+        (setDetailsEvent)="setDetails($event)"
       ></app-plant-search>
+    </div>
+
+    <div>
+      <app-details
+        *ngIf="showDetailsModal"
+        (toggleDetailsModalEvent)="toggleDetailsModal()"
+      ></app-details>
     </div>
 
     <section id="gridSection">
@@ -30,7 +39,11 @@
             <i class="fas fa-search-plus fa-lg"></i>
           </button>
           <div class="plant">
-            <div *ngIf="item.plant">
+            <div
+              class="plantName"
+              *ngIf="item.plant"
+              (click)="[setDetails(item.plant), toggleDetailsModal()]"
+            >
               <p>
                 {{ item.plant.common_name }}
               </p>
@@ -64,4 +77,7 @@
   <p id="rotate">Please Rotate Your Device.</p>
   <img src="../../assets/large_happy-flowers-0217.png" alt="" />
 </div>
-<app-favorites></app-favorites>
+<app-favorites
+  (toggleDetailsModalEvent)="toggleDetailsModal()"
+  (setDetailsEvent)="setDetails($event)"
+></app-favorites>

@@ -28,8 +28,7 @@
           ></i>
           <button
             id="details"
-            routerLink="/details"
-            (click)="[setDetails(plant)]"
+            (click)="[setDetails(plant), toggleDetailsModal()]"
           >
             Details
           </button>
@@ -49,5 +48,3 @@
   </div>
 </div>
 <div id="overlay" (click)="toggleSearchModal()"></div>
-
-<!-- routerLink="/details" -->

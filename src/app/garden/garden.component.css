@@ -58,8 +58,21 @@ button:hover {
   left: 4px;
 }
 
+.plantName {
+  z-index: 10;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(144, 238, 144, 0.8);
+}
+
 .plantImg {
-  width: 75%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -17;
+  left: 0;
 }
 
 #garden {
@@ -69,7 +82,8 @@ button:hover {
 
 #addPlot {
   margin-top: 15px;
-  color: #d6f599;
+  color: rgb(144, 238, 144);
+  font-size: 30px;
 }
 
 .container::-webkit-scrollbar {
