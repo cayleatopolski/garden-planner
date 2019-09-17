@@ -69,8 +69,8 @@ export class GardenService {
     this.router.navigate(["garden"]);
   }
 
-  moveToFavorites(love: object) {
-    this.favorites.push(love);
+  moveToFavorites(love: object, image: any) {
+    this.favorites.push({ love, image });
     console.log(this.favorites);
   }
 

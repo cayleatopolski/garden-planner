@@ -45,6 +45,17 @@ export class GardenGridService {
     });
   }
 
+  addFavoriteToGrid(plant: any, image: any): void {
+    this.gardenGrid.push({
+      cols: 1,
+      rows: 1,
+      x: 0,
+      y: 0,
+      plant: plant,
+      image: image
+    });
+  }
+
   addPlantToGrid(index: number, plant: any) {
     this.gardenGrid[index].plant = plant;
   }
