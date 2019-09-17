@@ -11,6 +11,7 @@ export class FavoritesComponent implements OnInit {
   @Output() toggleDetailsModalEvent = new EventEmitter<any>();
   @Output() setDetailsEvent = new EventEmitter<any>();
   favorites: any[];
+  DBFavorites: any;
   details: any;
 
   constructor(
@@ -20,6 +21,10 @@ export class FavoritesComponent implements OnInit {
 
   ngOnInit() {
     this.favorites = this.gardenService.getFavorites();
+    this.gardenService.getDBFavorites().subscribe(response => {
+      this.favorites = response;
+      console.log(response);
+    })
   }
 
   setDetails(plant: any) {

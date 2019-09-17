@@ -65,6 +65,10 @@ export class GardenService {
     );
   }
 
+  getDBFavorites(): Observable<any> {
+    return this.http.get("http://localhost:5000/favorites");
+  }
+
   goToGarden(): void {
     this.router.navigate(["garden"]);
   }
