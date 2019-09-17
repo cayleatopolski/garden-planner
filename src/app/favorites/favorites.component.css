@@ -1,7 +1,4 @@
-div {
-  border: 5px solid #654321;
-  display: flex;
-  flex-direction: column;
-  padding: 20px 25px;
-  color: green;
+#drawer {
+  background: #d6f599;
+  color: #1b998b;
 }

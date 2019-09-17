@@ -10,11 +10,6 @@ div {
   margin: 0;
 }
 
-/* @font-face {
-  font-family: "Decovar Regular24";
-  src: url("DecovarAlpha-VF.ttf");
-} */
-
 @font-face {
   font-family: "Decovar Regular24";
   src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Decovar-VF.ttf");
@@ -60,10 +55,11 @@ h1 {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   text-align: center;
   letter-spacing: 0.6rem;
 }
+
 h1::after,
 h1::before {
   content: attr(data-text);
@@ -87,13 +83,13 @@ p {
 
 button {
   border: none;
-  background-color: lightgreen;
+  background-color: #d6f599;
   font-size: 20px;
   border-radius: 50px;
   padding: 10px;
   margin: 40px;
   text-align: center;
-  color: white;
+  color: #1b998b;
   box-shadow: 2px 2px 5px black;
 }
 
@@ -117,28 +113,6 @@ footer {
   color: #fff;
   height: 20px;
 }
-
-/* @keyframes pulse {
-  from {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.85);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-h1 {
-  animation-name: pulse;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  color: grey;
-  font-size: 50px;
-  margin-top: 0;
-  margin-bottom: 0;
-} */
 
 .grow {
   transition: all 0.2s ease-in-out;
