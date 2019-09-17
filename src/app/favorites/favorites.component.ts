@@ -9,6 +9,7 @@ import { GardenGridService } from "../services/garden-grid.service";
 })
 export class FavoritesComponent implements OnInit {
   favorites: any[];
+  DBFavorites: any;
 
   constructor(
     private gardenService: GardenService,
@@ -17,5 +18,9 @@ export class FavoritesComponent implements OnInit {
 
   ngOnInit() {
     this.favorites = this.gardenService.getFavorites();
+    this.gardenService.getDBFavorites().subscribe(response => {
+      this.favorites = response;
+      console.log(response);
+    })
   }
 }
