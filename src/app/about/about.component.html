@@ -1,15 +1,52 @@
-<body>
+<div id="about">
+  <h1>Visualize your dream garden!</h1>
+  <div id="info">
+    <p>
+      Grow Pro is a free online garden planner for simple and creative garden
+      planning.
+    </p>
+    <p>The easiest way to plan, grow and harvest your own food.</p>
+    <p>
+      A popular question when starting a garden is what can I grow here and what
+      can I grow now? We've worked hard to solve that for you.
+    </p>
+  </div>
+  <div id="tutorial-container">
+    <h2>Tutorial</h2>
+    <mat-horizontal-stepper id="tutorial" *ngIf="!mobile">
+      <mat-step label="Step 1">
+        <p>Click Build to start!</p>
+      </mat-step>
+      <mat-step label="Step 2">
+        <p>Search for plants</p>
+      </mat-step>
+      <mat-step label="Step 3">
+        <p>Favorite plants or add them right to your garden</p>
+      </mat-step>
+      <mat-step label="Step 4">
+        <p>Add more plots</p>
+      </mat-step>
+      <mat-step label="Step 5">
+        <p>Delete plots</p>
+      </mat-step>
+    </mat-horizontal-stepper>
 
-    <img src="../../assets/seed .jpg">
-
-<h1>GROW GOOD VIBES</h1>
-<br>
-<p>Visualize your dream garden! Grow Pro is a free online garden planner for simple and creative garden planning.</p>
-<br>
-<p>The easiest way to plan, grow and harvest your own food.</p>
-<br>
-<p>A popular question when starting a garden is what can I grow here and what can I grow now? We've worked hard to solve that for you.</p>
-<br>
-</body>
-
-
+    <!-- <mat-vertical-stepper id="tutorial">
+      <mat-step label="Step 1">
+        <p>Click Build to start!</p>
+      </mat-step>
+      <mat-step label="Step 2">
+        <p>Search for plants</p>
+      </mat-step>
+      <mat-step label="Step 3">
+        <p>Favorite plants or add them right to your garden</p>
+      </mat-step>
+      <mat-step label="Step 4">
+        <p>Add more plots</p>
+      </mat-step>
+      <mat-step label="Step 5">
+        <p>Delete plots</p>
+      </mat-step>
+    </mat-vertical-stepper> -->
+  </div>
+</div>

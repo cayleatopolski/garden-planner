@@ -5,8 +5,6 @@ div {
   justify-content: center;
   flex-direction: column;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: #328a26;
-  background: radial-gradient(#adbf41, #328a26);
   margin: 0;
 }
 
