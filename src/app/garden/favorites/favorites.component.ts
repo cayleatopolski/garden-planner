@@ -23,8 +23,7 @@ export class FavoritesComponent implements OnInit {
     this.favorites = this.gardenService.getFavorites();
     this.gardenService.getDBFavorites().subscribe(response => {
       this.DBFavorites = response;
-      console.log(this.DBFavorites);
-    })
+    });
   }
 
   setDetails(plant: any) {
