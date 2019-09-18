@@ -15,9 +15,7 @@
 }
 
 #overlay {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  position: fixed;
   z-index: 99;
   background: rgba(0, 0, 0, 0.7);
   width: 100%;
