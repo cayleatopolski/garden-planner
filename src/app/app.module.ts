@@ -17,6 +17,7 @@ import { GardenGridService } from "./services/garden-grid.service";
 import { FavoritesComponent } from "./garden/favorites/favorites.component";
 import { DetailsComponent } from "./garden/details/details.component";
 import { MatTooltipModule } from "@angular/material";
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     AboutComponent,
     GardenComponent,
     FavoritesComponent,
-    DetailsComponent
+    DetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
