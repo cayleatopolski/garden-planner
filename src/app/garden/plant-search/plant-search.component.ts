@@ -15,7 +15,7 @@ export class PlantSearchComponent implements OnInit {
   @Output() toggleDetailsModalEvent = new EventEmitter<any>();
   @Output() setDetailsEvent = new EventEmitter<any>();
   plantData: any[] = [];
-  images: any[] = [];
+  images: any = [];
   details: any;
   loading: boolean = false;
 
