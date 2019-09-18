@@ -12,6 +12,11 @@ gridster {
   width: 80vw;
   margin: auto;
 }
+
+gridster-item {
+  background: #d6f599;
+}
+
 /* rotate div  */
 #rotate {
   margin-top: 50px;
