@@ -16,7 +16,7 @@
     <div class="nav">
       <a class="nav-links first" routerLink="/home">Home</a>
       <a class="nav-links" routerLink="/garden">Garden</a>
-      <i class="fas fa-user"></i>
+      <i (click)="toggleLoginModal()" class="fas fa-user"></i>
     </div>
   </mat-toolbar>
 
@@ -32,3 +32,8 @@
     <mat-sidenav-content><router-outlet> </router-outlet></mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+
+<app-login
+  *ngIf="showLoginModal"
+  (toggleLoginModalEvent)="toggleLoginModal()"
+></app-login>
