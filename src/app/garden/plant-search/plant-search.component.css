@@ -203,4 +203,8 @@ button {
     height: 80vh;
     overflow: auto;
   }
+
+  #searchResults {
+    display: inline-block;
+  }
 }

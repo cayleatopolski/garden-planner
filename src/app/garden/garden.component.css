@@ -171,6 +171,12 @@ p {
   }
 }
 
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  #addPlot {
+    font-size: 30px;
+  }
+}
+
 @media only screen and (orientation: landscape) {
   .container {
     visibility: visible;

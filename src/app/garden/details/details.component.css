@@ -60,3 +60,13 @@ p {
   animation-name: fadeIn;
   animation-duration: 0.25s;
 }
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  #modal-container2 {
+    position: fixed;
+    top: 15%;
+    width: 60vw;
+    height: 80vh;
+    overflow: auto;
+  }
+}
