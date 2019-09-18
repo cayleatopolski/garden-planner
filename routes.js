@@ -5,7 +5,7 @@ const axios = require("axios");
 router.get("/auth", (req, res) => {
   const origin = req.get(
     "origin"
-  ) || `${req.protocol}://${req.get('host')}`
+  ) || `https://${req.get('host')}`
   
   axios
     .post(
