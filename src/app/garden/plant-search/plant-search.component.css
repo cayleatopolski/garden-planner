@@ -12,6 +12,7 @@
   border-radius: 20px;
   animation: flipInY 0.7s;
   background: #9cc69b;
+  overflow: auto;
 }
 
 #overlay {
@@ -80,7 +81,6 @@ input {
 }
 
 #searchResults {
-  height: 285px;
   width: 375px;
   overflow: auto;
 }
@@ -192,5 +192,15 @@ button {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  #modal-container {
+    position: fixed;
+    top: 15%;
+    width: 60vw;
+    height: 80vh;
+    overflow: auto;
   }
 }

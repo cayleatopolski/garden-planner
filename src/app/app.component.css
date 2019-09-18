@@ -38,7 +38,7 @@ h1 {
   display: flex;
   background: transparent;
 }
-/* this below has something to do with space up top */
+
 .example-container {
   flex: 1;
   color: grey;
@@ -58,6 +58,20 @@ h1 {
 
 i {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  mat-toolbar {
+    height: 10vh;
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+
+  .nav-links {
+    font-size: 1em;
+  }
 }
 
 @media only screen and (min-width: 468px) {

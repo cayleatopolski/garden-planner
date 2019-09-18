@@ -46,3 +46,9 @@ button,
 i {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  #drawer {
+    margin-top: 25px;
+  }
+}
