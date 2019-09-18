@@ -5,6 +5,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  margin: 15px 0;
 }
 
 mat-panel-title {
