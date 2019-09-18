@@ -66,7 +66,7 @@ export class GardenService {
   }
 
   getDBFavorites(): Observable<any> {
-    return this.http.get("http://localhost:5000/favorites");
+    return this.http.get(`${environment.authApiUrl}/favorites`);
   }
 
   goToGarden(): void {
