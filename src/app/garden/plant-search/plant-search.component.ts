@@ -35,24 +35,24 @@ export class PlantSearchComponent implements OnInit {
     this.loading = !this.loading;
   }
 
-  submitForm(form: NgForm) {
-    this.toggleLoadingIcon();
-    this.gardenService
-      .getPlantData(form.value.searchTerm)
-      .pipe(
-        flatMap(shortPlantData => {
-          return this.gardenService.getId(shortPlantData);
-        })
-      )
-      .subscribe((plantData: any) => {
-        this.plantData = plantData;
-      });
+  // submitForm(form: NgForm) {
+  //   this.toggleLoadingIcon();
+  //   this.gardenService
+  //     .getPlantData(form.value.searchTerm)
+  //     .pipe(
+  //       flatMap(shortPlantData => {
+  //         return this.gardenService.getId(shortPlantData);
+  //       })
+  //     )
+  //     .subscribe((plantData: any) => {
+  //       this.plantData = plantData;
+  //     });
 
-    this.gardenService.getImages(form.value.searchTerm).subscribe(response => {
-      this.images = response;
-    });
-    this.toggleLoadingIcon();
-  }
+  //   this.gardenService.getImages(form.value.searchTerm).subscribe(response => {
+  //     this.images = response;
+  //   });
+  //   this.toggleLoadingIcon();
+  // }
 
   //modal
   toggleSearchModal(): void {
@@ -69,5 +69,24 @@ export class PlantSearchComponent implements OnInit {
 
   setDetails(plant: any) {
     this.setDetailsEvent.emit(plant);
+  }
+
+  submitForm(form: NgForm) {
+    this.loading = true; // Add this line
+    this.gardenService
+      .getPlantData(form.value.searchTerm)
+      .pipe(
+        flatMap(shortPlantData => {
+          return this.gardenService.getId(shortPlantData);
+        })
+      )
+      .subscribe((plantData: any) => {
+        this.loading = false;
+        this.plantData = plantData;
+      });
+
+    this.gardenService.getImages(form.value.searchTerm).subscribe(response => {
+      this.images = response;
+    });
   }
 }
