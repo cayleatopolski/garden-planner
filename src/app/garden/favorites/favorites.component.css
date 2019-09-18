@@ -28,9 +28,22 @@ img {
   margin: 5px;
 }
 
-.addFav {
+i {
   margin: 5px;
   color: #1b512d;
+}
+
+h1 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 17px;
+}
+
+hr {
+  border: 1px solid #1b512d;
 }
 
 .favDetails {
