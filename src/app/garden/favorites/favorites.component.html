@@ -6,6 +6,7 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
     <div class="favoritesContent">
+      <h1>Your Favorites</h1>
       <ol>
         <li *ngFor="let favorite of favorites">
           <p>
@@ -32,6 +33,7 @@
       </ol>
     </div>
     <div class="favoritesContent">
+      <h1>Popular Plants</h1>
       <ol>
         <li *ngFor="let mostCommon of DBFavorites">
           <p>
@@ -50,7 +52,7 @@
             </button>
             <i
               class="addFav"
-              (click)="addPlantToGrid(mostCommon)"
+              (click)="addPlantToGrid(mostCommon, mostCommon.image)"
               class="fas fa-plus-circle fa-lg"
             ></i>
           </div>
