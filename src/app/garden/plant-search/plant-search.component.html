@@ -9,7 +9,7 @@
       (click)="toggleSearchModal()"
     ></i>
   </form>
-  <img *ngIf="loading" src="../../../assets/370.gif" />
+  <img *ngIf="loading" src="../../../assets/Magnify-1s-200px.gif" />
   <div id="searchResults">
     <ol>
       <li class="plant" *ngFor="let plant of plantData; index as i">
@@ -48,9 +48,3 @@
   </div>
 </div>
 <div id="overlay" (click)="toggleSearchModal()"></div>
-
-<script type="text/javascript">
-  $(window).load(function() {
-    $(".loader").fadeOut("slow");
-  });
-</script>
