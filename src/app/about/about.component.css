@@ -19,6 +19,7 @@ img {
 
 h1 {
   margin: 15px;
+  color: #1b512d;
 }
 
 #info p {
@@ -38,11 +39,51 @@ h1 {
 }
 
 h2 {
+  font-size: 36px;
   margin: 10px;
+  color: #1b512d;
 }
 
 #tutorial {
   color: #d0e3cc;
   background: #79b4a9;
   width: 90%;
+  border-radius: 30px;
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  #tutorial {
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    display: none;
+    height: 50vh;
+  }
+
+  .rotate {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    width: 80%;
+    margin: auto;
+  }
+  .rotate img {
+    height: 80%;
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1300px) and (orientation: portrait) {
+  .rotate {
+    display: none;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  #tutorial {
+    visibility: visible;
+  }
+  .rotate {
+    display: none;
+  }
 }
