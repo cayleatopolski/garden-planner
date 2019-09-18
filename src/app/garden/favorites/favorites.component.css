@@ -33,6 +33,19 @@ i {
   color: #1b512d;
 }
 
+h1 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 17px;
+}
+
+hr {
+  border: 1px solid #1b512d;
+}
+
 .favDetails {
   background: #1b512d;
   color: white;
