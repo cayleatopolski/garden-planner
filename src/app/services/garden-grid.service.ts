@@ -13,9 +13,7 @@ export class GardenGridService {
       enabled: false
     },
     mobileBreakpoint: 0,
-    minRows: 2,
     maxRows: 5,
-    minCols: 2,
     maxCols: 5,
     margin: 5,
     disableWarnings: true
