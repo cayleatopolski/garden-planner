@@ -6,13 +6,39 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
     <div id="favoritesContent">
+        <ol>
+          <li *ngFor="let favorite of favorites">        
+            <p>
+              {{ favorite.love.common_name }}
+            </p>
+            <p *ngIf="favorite.common_name === null">
+              {{ favorite.love.scientific_name }}
+            </p>
+            <img src="{{ favorite.image }}" alt="" />
+            <div class="btnDiv">
+              <button
+                id="favDetails"
+                (click)="[setDetails(favorite.love), toggleDetailsModal()]"
+              >
+                Details
+              </button>
+              <i
+                id="addFav"
+                (click)="addPlantToGrid(favorite.love, favorite.image)"
+                class="fas fa-plus-circle"
+              ></i>
+            </div>
+          </li>
+        </ol>
+      </div>
+    <div id="favoritesContent">
       <ol>
-        <li *ngFor="let favorite of favorites">
+        <li *ngFor="let favorite of DBFavorites">        
           <p>
-            {{ favorite.love.common_name }}
+            {{ favorite.common_name }}
           </p>
-          <p *ngIf="favorite.love.common_name === null">
-            {{ favorite.love.scientific_name }}
+          <p *ngIf="favorite.common_name === null">
+            {{ favorite.scientific_name }}
           </p>
           <img src="{{ favorite.image }}" alt="" />
           <div class="btnDiv">
@@ -22,7 +48,6 @@
             >
               Details
             </button>
-
             <i
               id="addFav"
               (click)="addPlantToGrid(favorite.love, favorite.image)"

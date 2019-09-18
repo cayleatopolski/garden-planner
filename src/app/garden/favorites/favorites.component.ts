@@ -22,9 +22,9 @@ export class FavoritesComponent implements OnInit {
   ngOnInit() {
     this.favorites = this.gardenService.getFavorites();
     this.gardenService.getDBFavorites().subscribe(response => {
-      this.favorites = response;
-      console.log(response);
-    });
+      this.DBFavorites = response;
+      console.log(this.DBFavorites);
+    })
   }
 
   setDetails(plant: any) {
