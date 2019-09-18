@@ -1,4 +1,9 @@
 <section id="loginForm">
+  <i
+    id="closeLogin"
+    class="far fa-times-circle fa-2x"
+    (click)="toggleLoginModal()"
+  ></i>
   <form #loginForm="ngForm">
     <h1>Hello There!</h1>
     <input type="text" name="username" placeholder="Username" ngModel />
@@ -8,3 +13,4 @@
     <p>Create an account here</p>
   </form>
 </section>
+<div id="loginOverlay" (click)="toggleSearchModal()"></div>

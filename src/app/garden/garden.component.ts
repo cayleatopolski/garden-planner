@@ -56,7 +56,6 @@ export class GardenComponent implements OnInit {
 
   toggleDetailsModal(): void {
     this.showDetailsModal = !this.showDetailsModal;
-    console.log("toggle");
   }
 
   setDetails(plant: any) {

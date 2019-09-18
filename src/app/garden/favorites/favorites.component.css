@@ -28,12 +28,12 @@ img {
   margin: 5px;
 }
 
-#addFav {
+.addFav {
   margin: 5px;
   color: #1b512d;
 }
 
-#favDetails {
+.favDetails {
   background: #1b512d;
   color: white;
   border: none;

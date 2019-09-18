@@ -18,7 +18,6 @@ export class PlantSearchComponent implements OnInit {
   images: any[] = [];
   details: any;
   loading: boolean = false;
-  // showDetailsModal: boolean = false;
 
   constructor(private gardenService: GardenService) {}
 
