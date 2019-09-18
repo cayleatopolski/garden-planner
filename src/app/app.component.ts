@@ -8,8 +8,13 @@ import { Component } from "@angular/core";
 export class AppComponent {
   title = "final-project";
   closed: boolean = true;
+  showLoginModal: boolean = false;
 
   toggleClass() {
     this.closed = !this.closed;
+  }
+
+  toggleLoginModal(): void {
+    this.showLoginModal = !this.showLoginModal;
   }
 }

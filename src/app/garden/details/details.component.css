@@ -39,10 +39,20 @@ h1 {
   color: #d6f599;
   text-shadow: 1px 1px black;
   margin: 8px 0;
+  font-size: 38px;
 }
 
 p {
   color: #1b512d;
+}
+
+#popularDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.detail {
+  margin: 10px;
 }
 
 @keyframes fadeIn {

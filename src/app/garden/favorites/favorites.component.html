@@ -5,52 +5,55 @@
         Favorite Plants
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <div id="favoritesContent">
-        <ol>
-          <li *ngFor="let favorite of favorites">        
-            <p>
-              {{ favorite.love.common_name }}
-            </p>
-            <p *ngIf="favorite.common_name === null">
-              {{ favorite.love.scientific_name }}
-            </p>
-            <img src="{{ favorite.image }}" alt="" />
-            <div class="btnDiv">
-              <button
-                id="favDetails"
-                (click)="[setDetails(favorite.love), toggleDetailsModal()]"
-              >
-                Details
-              </button>
-              <i
-                id="addFav"
-                (click)="addPlantToGrid(favorite.love, favorite.image)"
-                class="fas fa-plus-circle"
-              ></i>
-            </div>
-          </li>
-        </ol>
-      </div>
-    <div id="favoritesContent">
+    <div class="favoritesContent">
+      <h1>Your Favorites</h1>
       <ol>
-        <li *ngFor="let favorite of DBFavorites">        
+        <li *ngFor="let favorite of favorites">
           <p>
-            {{ favorite.common_name }}
+            {{ favorite.plant.common_name }}
           </p>
-          <p *ngIf="favorite.common_name === null">
-            {{ favorite.scientific_name }}
+          <p *ngIf="favorite.plant.common_name === null">
+            {{ favorite.plant.scientific_name }}
           </p>
           <img src="{{ favorite.image }}" alt="" />
           <div class="btnDiv">
             <button
-              id="favDetails"
-              (click)="[setDetails(favorite.love), toggleDetailsModal()]"
+              class="favDetails"
+              (click)="[setDetails(favorite.plant), toggleDetailsModal()]"
             >
               Details
             </button>
             <i
-              id="addFav"
-              (click)="addPlantToGrid(favorite.love, favorite.image)"
+              class="addFav"
+              (click)="addPlantToGrid(favorite.plant, favorite.image)"
+              class="fas fa-plus-circle"
+            ></i>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <hr />
+    <div class="favoritesContent">
+      <h1>Popular Plants</h1>
+      <ol>
+        <li *ngFor="let mostCommon of DBFavorites">
+          <p>
+            {{ mostCommon.common_name }}
+          </p>
+          <p *ngIf="mostCommon.common_name === null">
+            {{ mostCommon.scientific_name }}
+          </p>
+          <img src="{{ mostCommon.image }}" alt="" />
+          <div class="btnDiv">
+            <button
+              class="favDetails"
+              (click)="[setDetails(mostCommon), toggleDetailsModal()]"
+            >
+              Details
+            </button>
+            <i
+              class="addFav"
+              (click)="addPlantToGrid(mostCommon, mostCommon.image)"
               class="fas fa-plus-circle fa-lg"
             ></i>
           </div>

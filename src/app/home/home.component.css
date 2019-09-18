@@ -21,6 +21,7 @@ h1 {
   font-weight: 400;
   font-family: "Decovar Regular24";
   font-variation-settings: "INLN" 400, "SWRM" 1000;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: url(./grass.jpg);
