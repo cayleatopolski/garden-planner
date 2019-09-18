@@ -9,13 +9,7 @@
       (click)="toggleSearchModal()"
     ></i>
   </form>
-  <div id="loadingIcon" class="lds-ring" *ngIf="!toggleLoadingIcon">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <!-- the above empty divs are required for the loading icon -->
-  </div>
+  <img *ngIf="loading" src="../../../assets/Magnify-1s-200px.gif" />
   <div id="searchResults">
     <ol>
       <li class="plant" *ngFor="let plant of plantData; index as i">
