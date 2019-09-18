@@ -5,6 +5,7 @@ const port = process.env.PORT || 5000;
 const router = require("./routes");
 const anotherOne = require("./favorites.api");
 const app = express();
+const path = require('path')
 
 app.use(cors());
 app.use(express.json());
