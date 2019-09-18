@@ -19,7 +19,6 @@ export class GardenComponent implements OnInit {
   gardenGrid: GridsterItem[] = [];
   showSearchModal: boolean = false;
   showDetailsModal: boolean = false;
-  // showLoginModal: boolean = false;
   clickedIndex: number = null;
 
   constructor(
@@ -58,10 +57,6 @@ export class GardenComponent implements OnInit {
   toggleDetailsModal(): void {
     this.showDetailsModal = !this.showDetailsModal;
   }
-
-  // toggleLoginModal(): void {
-  //   this.showLoginModal = !this.showLoginModal;
-  // }
 
   setDetails(plant: any) {
     this.gardenService.setDetails(plant);
