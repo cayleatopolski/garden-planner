@@ -7,6 +7,10 @@
   transform: translateX(-50%);
 }
 
+mat-panel-title {
+  color: #1b512d;
+}
+
 ol {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -26,14 +30,25 @@ img {
 
 #addFav {
   margin: 5px;
-  color: green;
+  color: #1b512d;
 }
 
 #favDetails {
-  background: green;
+  background: #1b512d;
   color: white;
   border: none;
-  padding: 5px;
+  padding: 6px 10px;
   border-radius: 50px;
   margin: 5px 0 0 0;
+}
+
+button,
+i {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  #drawer {
+    margin-top: 18px;
+  }
 }

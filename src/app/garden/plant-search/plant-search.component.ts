@@ -17,6 +17,7 @@ export class PlantSearchComponent implements OnInit {
   plantData: any[] = [];
   images: any[] = [];
   details: any;
+  loading: boolean = false;
   // showDetailsModal: boolean = false;
 
   constructor(private gardenService: GardenService) {}
@@ -31,7 +32,12 @@ export class PlantSearchComponent implements OnInit {
     this.addImageToGridEvent.emit(image);
   }
 
+  toggleLoadingIcon(): void {
+    this.loading = !this.loading;
+  }
+
   submitForm(form: NgForm) {
+    this.toggleLoadingIcon();
     this.gardenService
       .getPlantData(form.value.searchTerm)
       .pipe(
@@ -46,6 +52,7 @@ export class PlantSearchComponent implements OnInit {
     this.gardenService.getImages(form.value.searchTerm).subscribe(response => {
       this.images = response;
     });
+    this.toggleLoadingIcon();
   }
 
   //modal

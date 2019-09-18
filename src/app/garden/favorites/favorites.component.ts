@@ -11,7 +11,7 @@ export class FavoritesComponent implements OnInit {
   @Output() toggleDetailsModalEvent = new EventEmitter<any>();
   @Output() setDetailsEvent = new EventEmitter<any>();
   favorites: any[];
-  DBFavorites: any;
+  DBFavorites: any[];
   details: any;
 
   constructor(

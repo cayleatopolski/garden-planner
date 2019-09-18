@@ -4,12 +4,13 @@
   left: 50%;
   width: 375px;
   height: 375px;
-  background: white;
+  background: #9cc69b;
   margin-left: -187.5px;
   text-align: center;
   box-shadow: 0px 0px 2px 1px black;
   z-index: 1000;
   border-radius: 20px;
+  animation: fadeIn 0.5s;
 }
 
 #overlay2 {
@@ -26,5 +27,46 @@
   position: absolute;
   right: 8px;
   top: 0;
-  color: green;
+  color: #1b512d;
+}
+
+i {
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+h1 {
+  color: #d6f599;
+  text-shadow: 1px 1px black;
+  margin: 8px 0;
+}
+
+p {
+  color: #1b512d;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  animation-duration: 0.25s;
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  #modal-container2 {
+    position: fixed;
+    top: 15%;
+    width: 60vw;
+    height: 80vh;
+    overflow: auto;
+  }
 }

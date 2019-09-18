@@ -10,8 +10,9 @@
   box-shadow: 0px 0px 2px 1px black;
   z-index: 100;
   border-radius: 20px;
-  animation: popup 0.3s;
-
+  animation: flipInY 0.7s;
+  background: #9cc69b;
+  overflow: auto;
 }
 
 #overlay {
@@ -19,7 +20,7 @@
   top: 0px;
   left: 0px;
   z-index: 99;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
 }
@@ -32,12 +33,22 @@ form {
   margin: 5px 0 0 0;
 }
 
+span {
+  color: #d6f599;
+  text-shadow: 1px 1px black;
+}
+
+input {
+  height: 25px;
+  padding: 0 5px;
+}
+
 #searchBtn {
-  background: green;
+  background: #1b512d;
   box-shadow: 2px 2px 5px black;
   color: white;
   border: none;
-  padding: 5px;
+  padding: 6px 10px;
   border-radius: 50px;
   margin: 5px 0 0 0;
 }
@@ -48,10 +59,10 @@ label {
 }
 
 #details {
-  background: green;
+  background: #1b512d;
   color: white;
   border: none;
-  padding: 5px;
+  padding: 6px 10px;
   border-radius: 50px;
   margin: 5px 0 0 0;
 }
@@ -66,11 +77,10 @@ input {
   position: absolute;
   right: 8px;
   top: 0;
-  color: green;
+  color: #1b512d;
 }
 
 #searchResults {
-  height: 290px;
   width: 375px;
   overflow: auto;
 }
@@ -82,6 +92,11 @@ input {
   margin: 5px 0;
 }
 
+p {
+  color: #1b512d;
+  font-weight: 300;
+}
+
 img {
   width: 25%;
   margin: 5px 0 0 0;
@@ -89,12 +104,13 @@ img {
 
 #favorite {
   margin: 5px;
-  color: green;
+  color: #fc6c85;
+  text-shadow: 1px 1px black;
 }
 
 #add {
   margin: 5px;
-  color: green;
+  color: #1b512d;
 }
 
 i,
@@ -102,44 +118,93 @@ button {
   cursor: pointer;
 }
 
-/* #overlay:target,
-#modal {
-  animation: popup 0.4s;
-} */
+@keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
 
-@keyframes popup {
-  0% {
-    transform: scale(0);
-  }
-  10% {
-    transform: scale(0.1);
-  }
-  20% {
-    transform: scale(0.2);
-  }
-  30% {
-    transform: scale(0.3);
-  }
   40% {
-    transform: scale(0.4);
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
-  50% {
-    transform: scale(0.5);
-  }
+
   60% {
-    transform: scale(0.6);
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
   }
-  70% {
-    transform: scale(0.7);
-  }
+
   80% {
-    transform: scale(0.8);
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
   }
-  90% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
   }
 }
 
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  animation-name: flipInY;
+}
+
+/* loading icon */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fdd;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fdd transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  #modal-container {
+    position: fixed;
+    top: 15%;
+    width: 60vw;
+    height: 80vh;
+    overflow: auto;
+  }
+
+  #searchResults {
+    display: inline-block;
+  }
+}

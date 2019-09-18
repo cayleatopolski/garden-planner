@@ -1,3 +1,4 @@
+/* Gridster */
 gridster {
   display: flex;
   flex-direction: column;
@@ -11,11 +12,51 @@ gridster {
   width: 80vw;
   margin: auto;
 }
-
+/* rotate div  */
 #rotate {
   margin-top: 50px;
   color: #d6f599;
   padding-bottom: 40px;
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.swing {
+  -webkit-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  animation-name: swing;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+}
+
+span {
+  display: inline-block;
 }
 
 button {
@@ -127,6 +168,12 @@ p {
 @media only screen and (min-width: 768px) and (max-width: 1300px) and (orientation: portrait) {
   .rotate {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  #addPlot {
+    font-size: 30px;
   }
 }
 
