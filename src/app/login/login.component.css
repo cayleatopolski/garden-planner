@@ -2,7 +2,7 @@
   background: #d6f599;
   color: #1b512d;
   position: fixed;
-  top: 200px;
+  top: 25%;
   left: 50%;
   width: 375px;
   height: 375px;
@@ -17,9 +17,7 @@
 }
 
 #loginOverlay {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  position: fixed;
   z-index: 99;
   background: rgba(0, 0, 0, 0.7);
   width: 100%;
